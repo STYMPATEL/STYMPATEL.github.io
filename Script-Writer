@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syni.me | AI Automation for YouTubers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        bg: '#050505',
+                        surface: '#0F0F0F',
+                        gold: '#FFD700', // Sona
+                        accent: '#6366F1'
+                    },
+                    animation: {
+                        'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #050505; color: white; overflow-x: hidden; }
+        
+        .gold-text {
+            color: #FFD700;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+        }
+
+        .strike-price {
+            text-decoration: line-through;
+            color: #666;
+            font-size: 1.2rem;
+        }
+
+        /* Custom Scrollbar for Script Box */
+        .script-box::-webkit-scrollbar { width: 8px; }
+        .script-box::-webkit-scrollbar-track { background: #111; }
+        .script-box::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        .script-box::-webkit-scrollbar-thumb:hover { background: #FFD700; }
+
+        .glass-effect {
+            background: rgba(20, 20, 20, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <div class="fixed top-0 w-full z-50 bg-red-600 text-white text-center py-2 font-bold text-xs md:text-sm tracking-wide shadow-lg shadow-red-900/50">
+        🔥 FLASH SALE: Flat 50% OFF for First 50 Users Only! <span id="slots" class="bg-black px-2 py-0.5 rounded ml-2 text-yellow-400">7 Spots Left</span>
+    </div>
+
+    <section class="relative pt-32 pb-16 px-6 text-center">
+        <div class="absolute top-20 left-1/2 -translate-x-1/2 w-[300px] h-[300px] bg-yellow-500/10 blur-[100px] rounded-full"></div>
+
+        <div class="container mx-auto max-w-4xl relative z-10" data-aos="fade-up">
+            <div class="inline-block border border-yellow-500/30 bg-yellow-500/10 px-4 py-1 rounded-full text-yellow-500 text-sm font-bold mb-6 animate-pulse-fast">
+                🚀 Launch Offer Ends Soon
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
+                STOP WRITING SCRIPTS.<br>
+                <span class="gold-text">START PRINTING VIEWS.</span>
+            </h1>
+            
+            <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+                Main aapke liye ek aisa <strong>Personal AI</strong> setup karunga jo aapki tone mein Viral Scripts, Titles aur Thumbnails likhega. <br>
+                <span class="text-white underline decoration-yellow-500">Example niche dekho 👇</span>
+            </p>
+
+            <a href="#pricing" class="bg-gradient-to-r from-yellow-500 to-yellow-600 text-black text-xl px-10 py-4 rounded-xl font-bold hover:scale-105 transition transform shadow-[0_0_30px_rgba(255,215,0,0.4)]">
+                Claim 50% Discount Now
+            </a>
+        </div>
+    </section>
+
+    <section class="py-16 px-4 bg-surface border-y border-white/5">
+        <div class="container mx-auto max-w-5xl">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold mb-2">⚡ Live AI Output Demo</h2>
+                <p class="text-gray-500 text-sm">Topic Input: "Varanasi Mystery" | Time Taken: 45 Seconds</p>
+            </div>
+
+            <div class="rounded-xl overflow-hidden border border-gray-700 shadow-2xl bg-[#0a0a0a]" data-aos="zoom-in">
+                <div class="bg-[#1a1a1a] px-4 py-3 flex items-center gap-3 border-b border-gray-700">
+                    <div class="flex gap-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                    <span class="text-xs text-gray-400 font-mono ml-2">Syni_Personal_AI_Script_Generator.exe</span>
+                </div>
+
+                <div class="p-6 md:p-10 font-mono text-sm md:text-base text-gray-300 h-[600px] overflow-y-auto script-box leading-relaxed">
+                    
+                    <div class="text-green-500 mb-6 font-bold">
+                        > GENERATING TITLE OPTIONS...<br>
+                        <span class="text-white">1. Why People Come to Varanasi to Die? | Shocking Mystery Explained</span>
+                    </div>
+
+                    <div class="text-yellow-500 mb-2 font-bold">> GENERATING FULL SCRIPT...</div>
+                    <hr class="border-gray-800 mb-6">
+
+                    <div class="space-y-6">
+                        <p class="text-purple-400 font-bold">[SCENE 1: THE HOOK]</p>
+                        <p>
+                            “Socho ek aisi jagah…<br>
+                            jahan log jeene nahi, marne aate hain.<br>
+                            Jahan maut bhi moksha ban jaati hai.<br>
+                            Aur jiska raaz science bhi poora explain nahi kar paayi…<br><br>
+                            <span class="text-white font-bold bg-white/10 px-1">Welcome to… Varanasi.”</span>
+                        </p>
+
+                        <p>
+                            “Yeh sirf ek sheher nahi hai. Yeh ek experience hai.<br>
+                            Ek aisa sheher jo kaha jaata hai duniya ke shuru hone se pehle bhi tha…<br>
+                            aur duniya ke khatam hone ke baad bhi rahega.”
+                        </p>
+
+                        <p class="text-purple-400 font-bold mt-8">[SCENE 2: MYSTERY 1 - OLD CITY]</p>
+                        <p>
+                            <strong class="text-white">🕯️ MYSTERY 1: Duniya Ka Sabse Purana Sheher?</strong><br>
+                            “History books kehti hain Varanasi 3000 se 5000 saal purana hai.<br>
+                            Lekin legends kehte hain… Bhagwan Shiva ne khud is sheher ko basaya tha.<br>
+                            Matlab? Jab baaki sheher paida bhi nahi hue the, Varanasi tab bhi zinda tha.”<br>
+                            <span class="text-gray-500 italic">// Visual: Old map fading into drone shot of Ghats</span>
+                        </p>
+
+                        <p class="text-purple-400 font-bold mt-8">[SCENE 3: MYSTERY 2 - DEATH & MOKSHA]</p>
+                        <p>
+                            <strong class="text-white">🔥 MYSTERY 2: Yahan Marna Kyun Moksha Maana Jaata Hai?</strong><br>
+                            “Mana jaata hai… agar koi insaan Varanasi mein apni aakhri saans leta hai,<br>
+                            toh use moksha mil jaati hai — janm-mrityu ke chakr se hamesha ke liye azaadi.<br>
+                            Isi liye yahan har din jalti chitaayein hain, par mahaul darawna nahi… shaant hota hai.”<br>
+                            <span class="text-red-400 italic">💀 Death here is not an end… it’s a celebration.</span>
+                        </p>
+
+                        <p class="text-purple-400 font-bold mt-8">[SCENE 4: MYSTERY 3 - MANIKARNIKA]</p>
+                        <p>
+                            <strong class="text-white">🔱 MYSTERY 3: Manikarnika Ghat — Jo Kabhi Sota Nahi</strong><br>
+                            “Manikarnika Ghat… kaha jaata hai yeh ghat kabhi band nahi hota.<br>
+                            Din ho ya raat, barsaat ho ya aandhi, aag yahan hamesha jalti rehti hai.<br>
+                            Log kehte hain… yahan Shiva khud khade hoke insaan ke kaan mein moksha ka mantra bolte hain.”
+                        </p>
+
+                        <p class="text-purple-400 font-bold mt-8">[SCENE 5: THE RIVER]</p>
+                        <p>
+                            <strong class="text-white">🌊 MYSTERY 4: Ganga — Jo Sab Kuch Le Jaati Hai</strong><br>
+                            “Ganga nadi… yahan log apne paap, dard, aur zindagi ke bojh baha dete hain.<br>
+                            Science kehta hai Ganga ka paani baaki nadiyon se alag hai. Lekin sawaal yeh hai — kaise? aur kyun?”
+                        </p>
+
+                        <p class="text-purple-400 font-bold mt-8">[SCENE 6: THE FEELING]</p>
+                        <p>
+                            <strong class="text-white">👁️ MYSTERY 5: Sheher Jo Zinda Mehsoos Hota Hai</strong><br>
+                            “Jo bhi Varanasi jaata hai, ek baat zaroor kehta hai — ‘Yeh sheher zinda hai.’<br>
+                            Galiyon mein ghoomte hue, ghanton ki awaaz, mantron ka echo…<br>
+                            aisa lagta hai jaise time yahan slow ho jaata ho.”
+                        </p>
+
+                        <p class="text-purple-400 font-bold mt-8">[SCENE 7: THE CONCLUSION]</p>
+                        <p>
+                            <strong class="text-red-500">⚠️ FINAL MYSTERY: Varanasi Kabhi Khatam Nahi Hoga</strong><br>
+                            “Kaha jaata hai… jab poori duniya khatam ho jaayegi, tab bhi Varanasi bacha rahega.<br>
+                            Isliye ise kehte hain — The City of Liberation.<br>
+                            Varanasi sirf ek jagah nahi… yeh ek reminder hai — zindagi temporary hai, par sach permanent.”
+                        </p>
+
+                        <p class="text-purple-400 font-bold mt-8">[OUTRO & CTA]</p>
+                        <p>
+                            “Agar tumhe aise real mysteries pasand hain, toh video ko like karo.<br>
+                            Comment me batao — kya tum Varanasi gaye ho?<br>
+                            Aur haan… subscribe kar lo, kyunki aage aur bhi raaz khulne wale hain 🔥”
+                        </p>
+                    </div>
+
+                    <hr class="border-gray-800 my-6">
+                    <div class="bg-[#111] p-4 border-l-4 border-yellow-500">
+                        <span class="text-yellow-500 font-bold text-xs uppercase">AI Generated Thumbnail Idea:</span><br>
+                        <span class="text-gray-400 italic">"Split Screen. Left: Dark Aghori face close up. Right: Bright burning pyre. Text Center: 'SHOCKING TRUTH'. High contrast, 8k cinematic."</span>
+                    </div>
+
+                    <div class="mt-4 text-green-500 font-bold animate-pulse">
+                        > SCRIPT GENERATION COMPLETE. READY TO COPY.
+                    </div>
+                </div>
+            </div>
+            
+            <p class="text-center text-gray-500 mt-4 text-sm">👆 This exact quality script will be generated for YOUR channel in minutes.</p>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-20 px-6 relative bg-gradient-to-b from-black to-indigo-900/10">
+        <div class="container mx-auto text-center mb-12">
+            <h2 class="text-4xl font-bold mb-4">Choose Your Upgrade</h2>
+            <div class="inline-block bg-yellow-500 text-black font-bold px-4 py-1 rounded-lg text-sm mb-4">
+                🎉 50% OFF SALE IS LIVE
+            </div>
+        </div>
+
+        <div class="container mx-auto grid md:grid-cols-3 gap-8 max-w-6xl items-end">
+            
+            <div class="glass-effect rounded-3xl p-8 text-left relative group hover:bg-white/5 transition duration-300">
+                <div class="absolute top-0 right-0 bg-gray-700 text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl">50% OFF</div>
+                <h3 class="text-2xl font-bold text-gray-300">Basic Prompt</h3>
+                
+                <div class="mt-4 mb-2">
+                    <span class="strike-price">₹1,999</span>
+                    <span class="text-4xl font-black text-white ml-2">₹999</span>
+                </div>
+                <p class="text-gray-500 text-sm mb-6">Setup yourself (DIY)</p>
+                
+                <ul class="space-y-3 mb-8 text-sm text-gray-400">
+                    <li><i class="fas fa-check text-yellow-500 mr-2"></i> 1 Personal Script Prompt</li>
+                    <li><i class="fas fa-check text-yellow-500 mr-2"></i> Title Generator</li>
+                    <li><i class="fas fa-times text-red-500 mr-2"></i> No Setup Support</li>
+                </ul>
+                <a href="https://wa.me/919211391953?text=Hi%20Satyam,%20I%20want%20to%20buy%20BASIC%20Plan%20for%20999" class="block w-full py-3 rounded-xl border border-white/20 text-center font-bold hover:bg-white hover:text-black transition">
+                    <i class="fab fa-whatsapp"></i> Buy on WhatsApp
+                </a>
+            </div>
+
+            <div class="bg-[#111] border-2 border-yellow-500 rounded-3xl p-8 text-left relative transform md:-translate-y-4 shadow-[0_0_50px_rgba(255,215,0,0.15)] z-10">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-yellow-500 text-black font-bold px-6 py-1 rounded-full text-sm shadow-lg uppercase">
+                    Most Popular 🔥
+                </div>
+                <h3 class="text-2xl font-bold text-white">Pro Setup</h3>
+                
+                <div class="mt-4 mb-2">
+                    <span class="strike-price text-gray-500">₹5,999</span>
+                    <span class="text-5xl font-black text-yellow-400 ml-2">₹2,999</span>
+                </div>
+                <p class="text-gray-400 text-sm mb-6">I will setup everything for you</p>
+                
+                <ul class="space-y-4 mb-8 text-sm text-gray-300">
+                    <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-3"></i> <strong>Full ChatGPT/Gemini Setup</strong></li>
+                    <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-3"></i> <strong>Personal Script Writer</strong></li>
+                    <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-3"></i> Viral Idea Generator</li>
+                    <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-3"></i> Thumbnail Prompt AI</li>
+                </ul>
+                <a href="https://wa.me/919211391953?text=Hi%20Satyam,%20I%20want%20PRO%20Setup%20Plan%20for%202999" class="block w-full py-4 rounded-xl bg-gradient-to-r from-yellow-500 to-yellow-600 text-black text-center font-bold text-xl hover:shadow-lg transition">
+                    <i class="fab fa-whatsapp"></i> Book Setup Now
+                </a>
+                <p class="text-center text-xs text-gray-500 mt-3">Only 7 spots left at this price</p>
+            </div>
+
+            <div class="glass-effect rounded-3xl p-8 text-left relative hover:bg-white/5 transition duration-300 border-t-4 border-indigo-500">
+                <div class="absolute top-0 right-0 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl">VIP</div>
+                <h3 class="text-2xl font-bold text-indigo-300">Custom Bot</h3>
+                
+                <div class="mt-4 mb-2">
+                    <span class="strike-price">₹11,999</span>
+                    <span class="text-4xl font-black text-white ml-2">₹5,999</span>
+                </div>
+                <p class="text-gray-500 text-sm mb-6">Personal AI App/Bot</p>
+                
+                <ul class="space-y-3 mb-8 text-sm text-gray-400">
+                    <li><i class="fas fa-check text-indigo-400 mr-2"></i> Dedicated AI Chatbot App</li>
+                    <li><i class="fas fa-check text-indigo-400 mr-2"></i> Competitor Analysis</li>
+                    <li><i class="fas fa-check text-indigo-400 mr-2"></i> Full Channel Strategy</li>
+                </ul>
+                <a href="https://wa.me/919211391953?text=Hi%20Satyam,%20I%20want%20ELITE%20Plan%20for%205999" class="block w-full py-3 rounded-xl border border-indigo-500 text-indigo-400 text-center font-bold hover:bg-indigo-600 hover:text-white transition">
+                    <i class="fab fa-whatsapp"></i> Get Custom Bot
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="py-10 text-center border-t border-white/10 bg-black">
+        <p class="text-gray-500 text-sm mb-2">Syni.me - Automation for Creators.</p>
+        <p class="text-gray-600 text-xs">WhatsApp Support: +91 92113 91953</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        
+        // Dynamic Slots Countdown
+        let slots = 7;
+        setInterval(() => {
+            if(Math.random() > 0.7 && slots > 2) {
+                slots--;
+                document.getElementById('slots').innerText = slots + " Spots Left";
+            }
+        }, 5000);
+    </script>
+</body>
+</html>
