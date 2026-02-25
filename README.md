@@ -1,1 +1,0 @@
-# STYMPATEL.github.io
