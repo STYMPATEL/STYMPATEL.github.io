@@ -3,614 +3,359 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>30 Days Overthinking Reset Prompt System | SatyamPatel.in</title>
     
-    <!-- SEO & Meta -->
-    <meta name="description" content="Har Din Overthinking Se Thak Gaye Ho? Ab Apne Mind Ko Daily Direction Do. 30 Days Overthinking Reset Prompt System by Satyam Patel.">
-    <meta name="author" content="Satyam Patel">
-    <link rel="icon" type="image/png" href="https://i.ibb.co/GQH94vfj/1000085693.png">
-
-    <!-- Fonts: Inter for that Apple/Stripe look -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- SEO Meta Tags -->
+    <title>SatyamPatel.in | Personalized Daily Prompts for Mental Wellness</title>
+    <meta name="description" content="Take back control of your mind with personalized daily prompts designed around your goals, routines, and habits to support your mental wellness journey.">
+    <link rel="canonical" href="https://satyampatel.in/" />
     
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- AOS Animation CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS (via CDN for styling) -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Custom Tailwind Configuration -->
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
                     colors: {
-                        electric: '#00F0FF',
-                        dark: '#020202', // Ultra deep black
-                    },
-                    animation: {
-                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'float': 'float 6s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-10px)' },
+                        brand: {
+                            blue: "#EBF3FA",
+                            purple: "#9F7AEA",
+                            green: "#C6F6D5",
+                            dark: "#1A202C"
                         }
+                    },
+                    boxShadow: {
+                        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
                     }
                 }
             }
         }
     </script>
 
-    <!-- Custom CSS for Premium Effects -->
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://satyampatel.in/#organization",
+          "name": "SatyamPatel.in",
+          "url": "https://satyampatel.in",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91-8303338664",
+            "contactType": "Customer Support",
+            "email": "Satyamloveai@gmail.com",
+            "areaServed": "IN"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Custom CSS for Animations & Glassmorphism -->
     <style>
         body {
-            background-color: #020202;
-            color: #ffffff;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
+            background: linear-gradient(135deg, #f3f4f6 0%, #e0e7ff 50%, #f3e8ff 100%);
+            color: #0f172a;
         }
 
-        /* High-End Linear-style Grid */
-        .bg-grid {
-            background-image: linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
-            background-size: 32px 32px;
-            position: absolute;
-            inset: 0;
-            z-index: -2;
-            mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
-            -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
-        }
-
-        .bg-gradient-radial {
-            background: radial-gradient(circle at top center, rgba(0, 240, 255, 0.12) 0%, transparent 50%);
-            position: absolute;
-            inset: 0;
-            z-index: -1;
-        }
-
-        /* Ultra Premium Glassmorphism */
-        .glass-nav {
-            background: rgba(2, 2, 2, 0.65);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-        }
-
+        /* Glassmorphism Classes */
         .glass-card {
-            background: linear-gradient(165deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
-            backdrop-filter: blur(24px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
         }
 
-        .glass-card:hover {
-            border-color: rgba(0, 240, 255, 0.5);
-            transform: translateY(-6px) scale(1.02);
-            box-shadow: 0 20px 50px -10px rgba(0, 240, 255, 0.25);
-            background: linear-gradient(165deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+        .glass-dark {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        /* Supercharged Buttons */
-        .btn-glow {
-            box-shadow: 0 0 25px rgba(0, 240, 255, 0.4);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        .btn-glow::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(to right, transparent, rgba(255,255,255,0.4), transparent);
-            transform: rotate(45deg);
-            animation: shine 3.5s infinite;
-            z-index: -1;
+        /* Scroll Animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
 
-        @keyframes shine {
-            0% { left: -100%; top: -100%; }
-            20% { left: 100%; top: 100%; }
-            100% { left: 100%; top: 100%; }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        .btn-glow:hover {
-            box-shadow: 0 0 50px rgba(0, 240, 255, 0.8);
-            transform: translateY(-3px);
-            color: #000;
+        /* Loading Spinner */
+        .spinner {
+            border: 4px solid rgba(168, 85, 247, 0.3);
+            border-top: 4px solid #a855f7;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            animation: spin 1s linear infinite;
         }
-
-        /* Timeline Gradient Line */
-        .timeline-line::before {
-            content: '';
-            position: absolute;
-            left: 23px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, #00F0FF, rgba(0, 240, 255, 0.3), transparent);
-        }
-
-        /* Clean Accordion */
-        details > summary {
-            list-style: none;
-        }
-        details > summary::-webkit-details-marker {
-            display: none;
-        }
-        
-        /* Smooth Text Selection */
-        ::selection {
-            background: #00F0FF;
-            color: #000;
-        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased selection:bg-purple-200 selection:text-purple-900">
 
-    <!-- Global Background Elements -->
-    <div class="bg-grid fixed"></div>
-    <div class="bg-gradient-radial fixed"></div>
-
-    <!-- Navbar -->
-    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <a href="#" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
-                    <!-- Logo kept in Navbar for branding -->
-                    <img src="https://i.ibb.co/GQH94vfj/1000085693.png" alt="Satyam Patel Logo" class="h-10 w-10 object-contain drop-shadow-[0_0_12px_rgba(0,240,255,0.6)]">
-                    <span class="font-bold text-xl tracking-tight hidden sm:block">SatyamPatel.in</span>
-                </a>
-                <a href="https://wa.me/919211391953?text=Hi+Satyam%2C+mujhe+30+Days+Overthinking+Reset+Prompt+purchase+karna+hai." 
-                   class="bg-electric text-black px-7 py-2.5 rounded-full font-bold text-sm hover:bg-white hover:shadow-[0_0_20px_#fff] transition-all duration-300">
-                    Buy Now – ₹199
-                </a>
-            </div>
+    <!-- HERO SECTION -->
+    <section class="relative pt-32 pb-20 px-6 lg:px-8 max-w-7xl mx-auto flex flex-col items-center text-center">
+        <div class="fade-up inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card shadow-sm mb-8">
+            <span class="flex h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
+            <span class="text-sm font-medium text-slate-700">🎁 Only For First 10 Users</span>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="relative pt-40 pb-24 lg:pt-52 lg:pb-32 overflow-hidden">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center" data-aos="fade-up" data-aos-duration="1000">
-            
-            <h1 class="text-5xl md:text-7xl lg:text-[5.5rem] font-black tracking-tighter mb-6 leading-[1.05]">
-                Har Din Overthinking <br class="hidden md:block"> Se Thak Gaye Ho? <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-electric via-blue-400 to-purple-400 animate-pulse-slow drop-shadow-sm">
-                    Ab Apne Mind Ko Daily Direction Do.
-                </span>
-            </h1>
-            
-            <p class="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto mb-12 leading-relaxed font-medium">
-                Ye 30 Days Overthinking Reset Prompt System ek structured daily practice hai jo aapko journaling, breathing, meditation guidance, routine building aur self-reflection ke through healthier thinking habits develop karne me support karta hai.
-            </p>
-
-            <!-- Pricing & Exclusive Badge -->
-            <div class="mb-12 flex flex-col items-center gap-5">
-                <div class="flex items-center justify-center gap-6">
-                    <span class="text-3xl md:text-4xl text-gray-600 line-through font-semibold">₹499</span>
-                    <span class="text-7xl md:text-8xl font-black text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.4)]">₹199</span>
-                </div>
-                
-                <!-- Glowing Premium Badge -->
-                <div class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-electric/10 border border-electric/40 text-electric font-bold text-sm tracking-wide shadow-[0_0_25px_rgba(0,240,255,0.2)]">
-                    <span class="relative flex h-3 w-3">
-                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-electric opacity-75"></span>
-                      <span class="relative inline-flex rounded-full h-3 w-3 bg-electric"></span>
-                    </span>
-                    Valid For First 50 Users Only
-                </div>
-            </div>
-
-            <!-- CTAs -->
-            <div class="flex flex-col sm:flex-row gap-5 justify-center items-center mt-6">
-                <a href="https://wa.me/919211391953?text=Hi+Satyam%2C+mujhe+30+Days+Overthinking+Reset+Prompt+purchase+karna+hai." 
-                   class="btn-glow w-full sm:w-auto bg-electric text-black px-12 py-4 rounded-full font-extrabold text-lg flex items-center justify-center gap-3">
-                    <i class="fa-brands fa-whatsapp text-2xl"></i>
-                    Buy Now – ₹199
-                </a>
-                <a href="#preview" class="w-full sm:w-auto px-12 py-4 rounded-full font-semibold text-lg border border-white/20 bg-white/5 hover:bg-white/10 hover:border-white/40 transition-all flex items-center justify-center gap-2 backdrop-blur-md">
-                    📖 Preview Dekho
-                </a>
-            </div>
-
-            <!-- Trust Badges -->
-            <div class="mt-16 flex flex-wrap justify-center gap-8 text-sm font-medium text-gray-500">
-                <div class="flex items-center gap-2"><i class="fa-solid fa-bolt text-electric/90 text-lg"></i> Instant Access</div>
-                <div class="flex items-center gap-2"><i class="fa-solid fa-file-pdf text-electric/90 text-lg"></i> Digital Product</div>
-                <div class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-electric/90 text-lg"></i> Secure Purchase</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Me (UPDATED WITH YOUR PHOTO) -->
-    <section class="py-24 relative" id="preview">
-        <!-- Subtle background glow behind the card -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-64 bg-electric/10 blur-[100px] z-0 rounded-full"></div>
         
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10" data-aos="fade-up">
-            <div class="glass-card rounded-[2.5rem] p-8 md:p-14 flex flex-col md:flex-row gap-12 items-center">
+        <h1 class="fade-up text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 mb-6" style="transition-delay: 100ms;">
+            Take Back Control <br class="hidden md:block"/> 
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
+                Of Your Mind.
+            </span>
+        </h1>
+        
+        <p class="fade-up max-w-2xl text-lg md:text-xl text-slate-600 mb-10 leading-relaxed" style="transition-delay: 200ms;">
+            Personalized daily prompts designed around your goals, routines, habits, and daily challenges to support your mental wellness journey alongside professional care.
+        </p>
+        
+        <div class="fade-up flex flex-col sm:flex-row gap-4 w-full justify-center" style="transition-delay: 300ms;">
+            <!-- Updated Hero CTA to WhatsApp -->
+            <a href="https://wa.me/918303338664?text=Hi,%20I%20want%20my%20FREE%20Day%201%20Experience!" target="_blank" class="px-8 py-4 rounded-full bg-slate-900 text-white font-semibold text-lg shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center">
+                Get Your FREE Day 1 Experience
+            </a>
+            <button class="px-8 py-4 rounded-full glass-card font-semibold text-lg hover:bg-white/80 transition-all flex items-center justify-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                Watch 2 Min Demo
+            </button>
+        </div>
+    </section>
+
+    <!-- TRUST SECTION -->
+    <section class="py-10 border-y border-white/20 bg-white/10 backdrop-blur-sm fade-up">
+        <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center gap-8 md:gap-16 opacity-70">
+            <div class="flex items-center gap-2 text-slate-700 font-medium">🛡️ Privacy Protected</div>
+            <div class="flex items-center gap-2 text-slate-700 font-medium">🧠 Personalized Prompts</div>
+            <div class="flex items-center gap-2 text-slate-700 font-medium">⚕️ Supports Professional Care</div>
+            <div class="flex items-center gap-2 text-slate-700 font-medium">🎯 Goal-Based Guidance</div>
+        </div>
+    </section>
+
+    <!-- PAIN POINTS SECTION -->
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16 fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Does This Sound Like You?</h2>
+            <p class="text-slate-600">The first step to feeling better is recognizing where you are.</p>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <!-- Items injected via JS for cleaner HTML -->
+            <script>
+                const pains = ["Overthinking", "Anxiety", "Negative Thoughts", "Brain Fog", "Low Motivation", "Poor Routine", "Phone Addiction", "Procrastination"];
+                pains.forEach((pain, index) => {
+                    document.write(`<div class="fade-up glass-card p-4 rounded-2xl shadow-glass text-center font-medium text-slate-800 hover:scale-105 transition-transform" style="transition-delay: ${index * 50}ms">${pain}</div>`);
+                });
+            </script>
+        </div>
+        
+        <div class="mt-16 text-center text-xl font-medium text-slate-700 italic fade-up">
+            "If this feels familiar, you're not alone—and you're in the right place."
+        </div>
+    </section>
+
+    <!-- INTERACTIVE ASSESSMENT -->
+    <section class="py-20 px-6 bg-slate-900 text-white fade-up">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10">Let's Build Your Routine</h2>
+            
+            <div class="glass-dark p-8 rounded-3xl shadow-2xl relative min-h-[300px] flex flex-col justify-center">
                 
-                <!-- New Profile Photo Frame -->
-                <div class="relative shrink-0 group">
-                    <div class="w-48 h-48 rounded-full p-1.5 bg-gradient-to-tr from-electric via-blue-500 to-purple-500 shadow-[0_0_40px_rgba(0,240,255,0.4)] group-hover:shadow-[0_0_60px_rgba(0,240,255,0.6)] transition-all duration-500 transform group-hover:scale-105">
-                        <img src="https://i.ibb.co/WNYLk8VS/1000084371.png" alt="Satyam Patel" class="w-full h-full object-cover rounded-full border-4 border-[#020202]">
+                <!-- Step 1: Form -->
+                <div id="assessment-step-1" class="space-y-8 text-left w-full transition-opacity duration-500">
+                    <div>
+                        <label class="block mb-2 font-medium">How is your stress level today?</label>
+                        <input type="range" class="w-full accent-purple-500">
                     </div>
-                    <!-- Floating badge on image -->
-                    <div class="absolute -bottom-4 -right-4 bg-[#020202] border border-white/10 px-4 py-2 rounded-full text-xs font-bold flex items-center gap-2 shadow-xl animate-float">
-                        <i class="fa-solid fa-code text-electric"></i> Creator
+                    <div>
+                        <label class="block mb-2 font-medium">How many hours did you sleep?</label>
+                        <input type="range" min="0" max="12" class="w-full accent-purple-500">
                     </div>
+                    <button onclick="runAssessment()" class="w-full py-4 rounded-xl bg-gradient-to-r from-purple-500 to-blue-500 font-bold text-lg hover:opacity-90 transition-opacity">
+                        Analyze My Profile
+                    </button>
                 </div>
 
-                <div>
-                    <div class="inline-block px-4 py-1.5 rounded-full border border-electric/30 bg-electric/10 text-electric text-xs font-bold uppercase tracking-widest mb-4">
-                        Meet The Creator
-                    </div>
-                    <h2 class="text-3xl md:text-5xl font-black mb-5 tracking-tight">👋 Hi, Main Satyam Patel Hu</h2>
-                    <p class="text-gray-300 text-lg md:text-xl mb-5 leading-relaxed font-medium">
-                        Main ek <span class="text-white font-bold border-b-2 border-electric">Prompt Engineer</span> hu aur Java Full Stack Development seekh raha hu. Mujhe AI aur practical self-improvement systems banana pasand hai.
-                    </p>
-                    <p class="text-gray-400 text-lg leading-relaxed">
-                        Is 30-Day Prompt System ko maine research-based self-help techniques aur structured prompting approach ko dhyan me rakhkar design kiya hai, taaki log apni daily routine, self-reflection aur healthier habits par consistently kaam kar sake.
-                    </p>
+                <!-- Step 2: Loading (Hidden by default) -->
+                <div id="assessment-loading" class="hidden flex-col items-center w-full transition-opacity duration-500">
+                    <div class="spinner mb-4"></div>
+                    <p class="text-lg font-medium animate-pulse">Designing your personalized Day 1 plan...</p>
                 </div>
+
+                <!-- Step 3: Result (Hidden by default) -->
+                <div id="assessment-result" class="hidden w-full transition-opacity duration-500">
+                    <div class="inline-flex p-3 bg-green-500/20 text-green-400 rounded-full mb-4 justify-center items-center">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-6">Your Day 1 Plan is Ready</h3>
+                    <div class="bg-black/20 rounded-xl p-6 mb-8 text-left space-y-4">
+                        <p>🎯 <strong>Today's Focus:</strong> Grounding & Small Wins</p>
+                        <p>🧘 <strong>Recommended:</strong> 5-min Box Breathing</p>
+                        <p>⏳ <strong>Estimated Time:</strong> 10 Minutes Total</p>
+                    </div>
+                    <a href="https://wa.me/918303338664?text=Hi,%20I%20just%20completed%20the%20assessment%20and%20want%20my%20Day%201%20Prompt!" target="_blank" class="w-full py-4 rounded-xl bg-[#25D366] text-white font-bold text-lg hover:bg-[#20b858] transition-colors flex items-center justify-center gap-2">
+                        Get My Prompt on WhatsApp
+                    </a>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- What You Get -->
-    <section class="py-32 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="text-center mb-20" data-aos="fade-up">
-                <h2 class="text-4xl md:text-6xl font-black mb-6 tracking-tight">What You Get In This System</h2>
-                <p class="text-gray-400 text-xl max-w-2xl mx-auto">Ek complete toolkit aapke mind ko reset aur organize karne ke liye.</p>
+    <!-- PRICING SECTION -->
+    <section class="py-24 px-6 max-w-7xl mx-auto fade-up">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Invest In Your Mind</h2>
+            <p class="text-slate-600">Choose the level of personalization that fits your goals.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <!-- Basic -->
+            <div class="bg-white rounded-3xl p-8 shadow-xl border border-slate-100 flex flex-col">
+                <h3 class="text-xl font-bold text-slate-800">Basic</h3>
+                <div class="mt-4 mb-8">
+                    <span class="text-4xl font-extrabold">₹1499</span><span class="text-slate-500">/mo</span>
+                </div>
+                <ul class="space-y-4 mb-8 flex-1">
+                    <li class="flex items-center gap-2">✅ Daily personalized prompts</li>
+                    <li class="flex items-center gap-2">✅ WhatsApp delivery</li>
+                </ul>
+                <a href="https://wa.me/918303338664?text=Hi,%20I%20want%20to%20subscribe%20to%20the%20Basic%20Plan%20for%20%E2%82%B91499" target="_blank" class="block text-center w-full py-3 rounded-xl border-2 border-slate-900 font-bold hover:bg-slate-50 transition-colors">Select Basic</a>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-6">
-                <!-- Premium Icon Cards -->
-                <div class="glass-card p-8 rounded-3xl flex flex-col items-center text-center gap-5 group" data-aos="zoom-in" data-aos-delay="50">
-                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-electric/20 to-transparent border border-electric/20 text-electric flex items-center justify-center text-2xl group-hover:-translate-y-2 transition-transform duration-300 shadow-[inset_0_0_15px_rgba(0,240,255,0.1)]"><i class="fa-solid fa-calendar-days"></i></div>
-                    <h3 class="font-bold text-gray-200 text-lg">30 Daily Guided Prompts</h3>
+            <!-- Pro -->
+            <div class="bg-slate-900 text-white rounded-3xl p-8 shadow-2xl border border-slate-700 flex flex-col relative transform md:-translate-y-4">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-purple-500 to-blue-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+                    Most Popular
                 </div>
-                <div class="glass-card p-8 rounded-3xl flex flex-col items-center text-center gap-5 group" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-electric/20 to-transparent border border-electric/20 text-electric flex items-center justify-center text-2xl group-hover:-translate-y-2 transition-transform duration-300 shadow-[inset_0_0_15px_rgba(0,240,255,0.1)]"><i class="fa-solid fa-sun"></i></div>
-                    <h3 class="font-bold text-gray-200 text-lg">Morning Routine</h3>
+                <h3 class="text-xl font-bold">Pro</h3>
+                <div class="mt-4 mb-8">
+                    <span class="text-4xl font-extrabold">₹2999</span><span class="text-slate-400">/mo</span>
                 </div>
-                <div class="glass-card p-8 rounded-3xl flex flex-col items-center text-center gap-5 group" data-aos="zoom-in" data-aos-delay="150">
-                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-electric/20 to-transparent border border-electric/20 text-electric flex items-center justify-center text-2xl group-hover:-translate-y-2 transition-transform duration-300 shadow-[inset_0_0_15px_rgba(0,240,255,0.1)]"><i class="fa-solid fa-moon"></i></div>
-                    <h3 class="font-bold text-gray-200 text-lg">Night Reflection</h3>
-                </div>
-                <div class="glass-card p-8 rounded-3xl flex flex-col items-center text-center gap-5 group" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-electric/20 to-transparent border border-electric/20 text-electric flex items-center justify-center text-2xl group-hover:-translate-y-2 transition-transform duration-300 shadow-[inset_0_0_15px_rgba(0,240,255,0.1)]"><i class="fa-solid fa-book-open"></i></div>
-                    <h3 class="font-bold text-gray-200 text-lg">Guided Journaling</h3>
-                </div>
-                <div class="glass-card p-8 rounded-3xl flex flex-col items-center text-center gap-5 group" data-aos="zoom-in" data-aos-delay="250">
-                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-electric/20 to-transparent border border-electric/20 text-electric flex items-center justify-center text-2xl group-hover:-translate-y-2 transition-transform duration-300 shadow-[inset_0_0_15px_rgba(0,240,255,0.1)]"><i class="fa-solid fa-om"></i></div>
-                    <h3 class="font-bold text-gray-200 text-lg">Meditation Guidance</h3>
-                </div>
-                <div class="glass-card p-8 rounded-3xl flex flex-col items-center text-center gap-5 group" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-electric/20 to-transparent border border-electric/20 text-electric flex items-center justify-center text-2xl group-hover:-translate-y-2 transition-transform duration-300 shadow-[inset_0_0_15px_rgba(0,240,255,0.1)]"><i class="fa-solid fa-wind"></i></div>
-                    <h3 class="font-bold text-gray-200 text-lg">Breathing Exercises</h3>
-                </div>
-                <div class="glass-card p-8 rounded-3xl flex flex-col items-center text-center gap-5 group" data-aos="zoom-in" data-aos-delay="350">
-                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-electric/20 to-transparent border border-electric/20 text-electric flex items-center justify-center text-2xl group-hover:-translate-y-2 transition-transform duration-300 shadow-[inset_0_0_15px_rgba(0,240,255,0.1)]"><i class="fa-solid fa-dumbbell"></i></div>
-                    <h3 class="font-bold text-gray-200 text-lg">Physical Activity</h3>
-                </div>
-                <div class="glass-card p-8 rounded-3xl flex flex-col items-center text-center gap-5 group" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-electric/20 to-transparent border border-electric/20 text-electric flex items-center justify-center text-2xl group-hover:-translate-y-2 transition-transform duration-300 shadow-[inset_0_0_15px_rgba(0,240,255,0.1)]"><i class="fa-solid fa-hammer"></i></div>
-                    <h3 class="font-bold text-gray-200 text-lg">Habit Builder</h3>
-                </div>
-                <div class="glass-card p-8 rounded-3xl flex flex-col items-center text-center gap-5 group" data-aos="zoom-in" data-aos-delay="450">
-                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-electric/20 to-transparent border border-electric/20 text-electric flex items-center justify-center text-2xl group-hover:-translate-y-2 transition-transform duration-300 shadow-[inset_0_0_15px_rgba(0,240,255,0.1)]"><i class="fa-solid fa-hands-praying"></i></div>
-                    <h3 class="font-bold text-gray-200 text-lg">Gratitude Practice</h3>
-                </div>
-                <div class="glass-card p-8 rounded-3xl flex flex-col items-center text-center gap-5 group" data-aos="zoom-in" data-aos-delay="500">
-                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-electric/20 to-transparent border border-electric/20 text-electric flex items-center justify-center text-2xl group-hover:-translate-y-2 transition-transform duration-300 shadow-[inset_0_0_15px_rgba(0,240,255,0.1)]"><i class="fa-solid fa-brain"></i></div>
-                    <h3 class="font-bold text-gray-200 text-lg">Thought Reflection</h3>
-                </div>
-                <div class="glass-card p-8 rounded-3xl flex flex-col items-center text-center gap-5 group" data-aos="zoom-in" data-aos-delay="550">
-                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-electric/20 to-transparent border border-electric/20 text-electric flex items-center justify-center text-2xl group-hover:-translate-y-2 transition-transform duration-300 shadow-[inset_0_0_15px_rgba(0,240,255,0.1)]"><i class="fa-solid fa-bullseye"></i></div>
-                    <h3 class="font-bold text-gray-200 text-lg">Daily Goals</h3>
-                </div>
-                <div class="glass-card p-8 rounded-3xl flex flex-col items-center text-center gap-5 group" data-aos="zoom-in" data-aos-delay="600">
-                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-electric/20 to-transparent border border-electric/20 text-electric flex items-center justify-center text-2xl group-hover:-translate-y-2 transition-transform duration-300 shadow-[inset_0_0_15px_rgba(0,240,255,0.1)]"><i class="fa-solid fa-robot"></i></div>
-                    <h3 class="font-bold text-gray-200 text-lg">AI Instructions</h3>
-                </div>
+                <ul class="space-y-4 mb-8 flex-1">
+                    <li class="flex items-center gap-2 text-purple-200">✨ Deeper personalization</li>
+                    <li class="flex items-center gap-2 text-purple-200">✨ Progress-based updates</li>
+                    <li class="flex items-center gap-2 text-purple-200">✨ WhatsApp delivery</li>
+                    <li class="flex items-center gap-2 text-purple-200">✨ Priority support</li>
+                </ul>
+                <a href="https://wa.me/918303338664?text=Hi,%20I%20want%20to%20subscribe%20to%20the%20Pro%20Plan%20for%20%E2%82%B92999" target="_blank" class="block text-center w-full py-3 rounded-xl bg-white text-slate-900 font-bold hover:bg-slate-100 transition-colors">Select Pro</a>
             </div>
-            
-            <!-- Highlighted Feature -->
-            <div class="mt-10 max-w-4xl mx-auto glass-card p-8 md:p-10 rounded-[2.5rem] flex items-center justify-center gap-8 border-electric/40 bg-electric/5" data-aos="zoom-in" data-aos-delay="650">
-                <div class="w-20 h-20 rounded-full bg-electric/20 text-electric flex items-center justify-center text-3xl shrink-0 shadow-[0_0_30px_rgba(0,240,255,0.3)] animate-float"><i class="fa-solid fa-print"></i></div>
-                <div class="text-left">
-                    <h3 class="text-2xl font-black text-white mb-2">Printable Tracker Included</h3>
-                    <p class="text-gray-400 text-lg">Track your 30-day journey physically. Tick the boxes daily for that satisfying feeling of progress.</p>
+
+            <!-- Premium -->
+            <div class="bg-white rounded-3xl p-8 shadow-xl border border-slate-100 flex flex-col">
+                <h3 class="text-xl font-bold text-slate-800">Premium</h3>
+                <div class="mt-4 mb-8">
+                    <span class="text-4xl font-extrabold">₹4499</span><span class="text-slate-500">/mo</span>
                 </div>
+                <ul class="space-y-4 mb-8 flex-1">
+                    <li class="flex items-center gap-2">✅ Highest personalization</li>
+                    <li class="flex items-center gap-2">✅ Advanced planning</li>
+                    <li class="flex items-center gap-2">✅ Deep customization</li>
+                    <li class="flex items-center gap-2">✅ Priority support</li>
+                </ul>
+                <a href="https://wa.me/918303338664?text=Hi,%20I%20want%20to%20subscribe%20to%20the%20Premium%20Plan%20for%20%E2%82%B94499" target="_blank" class="block text-center w-full py-3 rounded-xl border-2 border-slate-900 font-bold hover:bg-slate-50 transition-colors">Select Premium</a>
             </div>
         </div>
     </section>
 
-    <!-- Split Section: Who is this for & How it works -->
-    <section class="py-28 bg-[#020202]/80 border-y border-white/5 backdrop-blur-2xl">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-20">
-            
-            <!-- Who is this for -->
-            <div data-aos="fade-right">
-                <h2 class="text-4xl font-black mb-12 tracking-tight">Perfect For People Who:</h2>
-                <ul class="space-y-5">
-                    <li class="flex items-center gap-5 p-6 glass-card rounded-2xl hover:translate-x-2 transition-transform">
-                        <i class="fa-solid fa-circle-check text-electric text-2xl shadow-[0_0_15px_rgba(0,240,255,0.5)] rounded-full"></i>
-                        <span class="font-semibold text-gray-200 text-lg">Har baat ko baar-baar sochte hain</span>
-                    </li>
-                    <li class="flex items-center gap-5 p-6 glass-card rounded-2xl hover:translate-x-2 transition-transform">
-                        <i class="fa-solid fa-circle-check text-electric text-2xl shadow-[0_0_15px_rgba(0,240,255,0.5)] rounded-full"></i>
-                        <span class="font-semibold text-gray-200 text-lg">Negative thoughts se pareshan rehte hain</span>
-                    </li>
-                    <li class="flex items-center gap-5 p-6 glass-card rounded-2xl hover:translate-x-2 transition-transform">
-                        <i class="fa-solid fa-circle-check text-electric text-2xl shadow-[0_0_15px_rgba(0,240,255,0.5)] rounded-full"></i>
-                        <span class="font-semibold text-gray-200 text-lg">Routine maintain nahi kar paate</span>
-                    </li>
-                    <li class="flex items-center gap-5 p-6 glass-card rounded-2xl hover:translate-x-2 transition-transform">
-                        <i class="fa-solid fa-circle-check text-electric text-2xl shadow-[0_0_15px_rgba(0,240,255,0.5)] rounded-full"></i>
-                        <span class="font-semibold text-gray-200 text-lg">Procrastination karte hain</span>
-                    </li>
-                    <li class="flex items-center gap-5 p-6 glass-card rounded-2xl hover:translate-x-2 transition-transform">
-                        <i class="fa-solid fa-circle-check text-electric text-2xl shadow-[0_0_15px_rgba(0,240,255,0.5)] rounded-full"></i>
-                        <span class="font-semibold text-gray-200 text-lg">Daily discipline banana chahte hain</span>
-                    </li>
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-400 py-12 px-6 fade-up">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 mb-8 border-b border-slate-800 pb-8">
+            <div class="md:col-span-2">
+                <h4 class="text-2xl font-bold text-white mb-4">SatyamPatel.in</h4>
+                <p class="max-w-sm text-sm leading-relaxed">
+                    Supporting your mental wellness journey through structured, personalized daily prompts. 
+                    <br><br>
+                    <strong>Disclaimer:</strong> We do not provide therapy or replace doctors. Our service is designed to support healthier routines alongside professional care.
+                </p>
+            </div>
+            <div>
+                <h5 class="text-white font-semibold mb-4">Contact</h5>
+                <ul class="space-y-2 text-sm">
+                    <li>📞 +91-8303338664</li>
+                    <li>✉️ Satyamloveai@gmail.com</li>
+                    <li>📍 Sector 22, Noida, UP</li>
                 </ul>
             </div>
-
-            <!-- How it works -->
-            <div data-aos="fade-left">
-                <h2 class="text-4xl font-black mb-12 tracking-tight">How It Works</h2>
-                <div class="relative timeline-line pl-16 space-y-12">
-                    <div class="relative group">
-                        <div class="absolute -left-[80px] w-14 h-14 rounded-full bg-[#020202] border-2 border-electric/50 group-hover:border-electric shadow-[0_0_20px_rgba(0,240,255,0.2)] group-hover:shadow-[0_0_30px_rgba(0,240,255,0.6)] flex items-center justify-center text-electric text-xl font-black z-10 transition-all duration-300">1</div>
-                        <h3 class="text-2xl font-bold mb-3 text-white">Buy the Prompt</h3>
-                        <p class="text-gray-400 text-lg">Click buy now and complete the purchase securely via WhatsApp.</p>
-                    </div>
-                    <div class="relative group">
-                        <div class="absolute -left-[80px] w-14 h-14 rounded-full bg-[#020202] border-2 border-electric/50 group-hover:border-electric shadow-[0_0_20px_rgba(0,240,255,0.2)] group-hover:shadow-[0_0_30px_rgba(0,240,255,0.6)] flex items-center justify-center text-electric text-xl font-black z-10 transition-all duration-300">2</div>
-                        <h3 class="text-2xl font-bold mb-3 text-white">Instant Access</h3>
-                        <p class="text-gray-400 text-lg">Aapko turant digital files aur setup instructions mil jayenge.</p>
-                    </div>
-                    <div class="relative group">
-                        <div class="absolute -left-[80px] w-14 h-14 rounded-full bg-[#020202] border-2 border-electric/50 group-hover:border-electric shadow-[0_0_20px_rgba(0,240,255,0.2)] group-hover:shadow-[0_0_30px_rgba(0,240,255,0.6)] flex items-center justify-center text-electric text-xl font-black z-10 transition-all duration-300">3</div>
-                        <h3 class="text-2xl font-bold mb-3 text-white">Daily 5 Mins Practice</h3>
-                        <p class="text-gray-400 text-lg">Roz sirf ek prompt follow karein. Apne thoughts ko reflect aur plan karein.</p>
-                    </div>
-                    <div class="relative group">
-                        <div class="absolute -left-[80px] w-14 h-14 rounded-full bg-[#020202] border-2 border-electric/50 group-hover:border-electric shadow-[0_0_20px_rgba(0,240,255,0.2)] group-hover:shadow-[0_0_30px_rgba(0,240,255,0.6)] flex items-center justify-center text-electric text-xl font-black z-10 transition-all duration-300">4</div>
-                        <h3 class="text-2xl font-bold mb-3 text-white">Transform Habits</h3>
-                        <p class="text-gray-400 text-lg">Consistency maintain karein aur 30 days me massive mental shift experience karein.</p>
-                    </div>
-                </div>
+            <div>
+                <h5 class="text-white font-semibold mb-4">Legal</h5>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Refund Policy</a></li>
+                </ul>
             </div>
         </div>
-    </section>
-
-    <!-- Why This System -->
-    <section class="py-32">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center" data-aos="fade-up">
-            <h2 class="text-4xl md:text-6xl font-black mb-20 tracking-tight">Why This System?</h2>
-            
-            <div class="grid md:grid-cols-2 gap-10 text-left">
-                <!-- Old Way / Red -->
-                <div class="glass-card p-10 rounded-[2.5rem] border-red-500/10 space-y-8 bg-red-950/5">
-                    <h3 class="text-xl font-bold text-gray-500 uppercase tracking-[0.2em] mb-8 flex items-center gap-3">
-                        <i class="fa-solid fa-ban"></i> The Old Way
-                    </h3>
-                    <div class="flex items-center gap-6">
-                        <div class="w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center text-red-500 shrink-0 text-xl"><i class="fa-solid fa-xmark"></i></div>
-                        <span class="text-gray-400 text-xl font-medium">Random Motivation</span>
-                    </div>
-                    <div class="flex items-center gap-6">
-                        <div class="w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center text-red-500 shrink-0 text-xl"><i class="fa-solid fa-xmark"></i></div>
-                        <span class="text-gray-400 text-xl font-medium">Random YouTube Videos</span>
-                    </div>
-                    <div class="flex items-center gap-6">
-                        <div class="w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center text-red-500 shrink-0 text-xl"><i class="fa-solid fa-xmark"></i></div>
-                        <span class="text-gray-400 text-xl font-medium">Zero Consistency</span>
-                    </div>
-                    <div class="flex items-center gap-6">
-                        <div class="w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center text-red-500 shrink-0 text-xl"><i class="fa-solid fa-xmark"></i></div>
-                        <span class="text-gray-400 text-xl font-medium">Brain Fog & Confusion</span>
-                    </div>
-                </div>
-
-                <!-- New Way / Green(Electric) -->
-                <div class="glass-card p-10 rounded-[2.5rem] border-electric/40 space-y-8 shadow-[0_0_40px_rgba(0,240,255,0.1)] relative overflow-hidden transform md:-translate-y-4">
-                    <div class="absolute top-0 right-0 w-48 h-48 bg-electric/15 blur-[80px] rounded-full"></div>
-                    <h3 class="text-xl font-bold text-electric uppercase tracking-[0.2em] mb-8 flex items-center gap-3">
-                        <i class="fa-solid fa-star"></i> The Prompt System
-                    </h3>
-                    <div class="flex items-center gap-6">
-                        <div class="w-12 h-12 rounded-full bg-electric/10 flex items-center justify-center text-electric shrink-0 text-xl shadow-[0_0_15px_rgba(0,240,255,0.3)]"><i class="fa-solid fa-check"></i></div>
-                        <span class="font-bold text-white text-xl">Structured Daily Practice</span>
-                    </div>
-                    <div class="flex items-center gap-6">
-                        <div class="w-12 h-12 rounded-full bg-electric/10 flex items-center justify-center text-electric shrink-0 text-xl shadow-[0_0_15px_rgba(0,240,255,0.3)]"><i class="fa-solid fa-check"></i></div>
-                        <span class="font-bold text-white text-xl">Actionable Daily Guidance</span>
-                    </div>
-                    <div class="flex items-center gap-6">
-                        <div class="w-12 h-12 rounded-full bg-electric/10 flex items-center justify-center text-electric shrink-0 text-xl shadow-[0_0_15px_rgba(0,240,255,0.3)]"><i class="fa-solid fa-check"></i></div>
-                        <span class="font-bold text-white text-xl">Daily Habit Building</span>
-                    </div>
-                    <div class="flex items-center gap-6">
-                        <div class="w-12 h-12 rounded-full bg-electric/10 flex items-center justify-center text-electric shrink-0 text-xl shadow-[0_0_15px_rgba(0,240,255,0.3)]"><i class="fa-solid fa-check"></i></div>
-                        <span class="font-bold text-white text-xl">Crystal Clear Direction</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section class="py-24 relative overflow-hidden">
-        <div class="absolute inset-0 bg-electric/10 blur-[150px] z-0 rounded-full scale-150 opacity-40"></div>
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center" data-aos="zoom-in">
-            <div class="glass-card rounded-[3.5rem] p-12 md:p-20 border-electric/40 shadow-[0_0_100px_rgba(0,240,255,0.15)] bg-[#020202]/80 backdrop-blur-2xl">
-                <h2 class="text-4xl md:text-6xl font-black mb-8 tracking-tight">Start Your Reset Journey Today</h2>
-                
-                <div class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-electric/10 border border-electric/40 text-electric font-bold text-sm tracking-wide shadow-[0_0_20px_rgba(0,240,255,0.2)] mb-12">
-                    <span class="relative flex h-3 w-3">
-                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-electric opacity-75"></span>
-                      <span class="relative inline-flex rounded-full h-3 w-3 bg-electric"></span>
-                    </span>
-                    Valid For First 50 Users Only
-                </div>
-                
-                <div class="flex justify-center items-end gap-5 mb-12">
-                    <span class="text-4xl md:text-5xl text-gray-500 line-through pb-2 font-semibold">₹499</span>
-                    <span class="text-7xl md:text-9xl font-black text-white drop-shadow-[0_0_40px_rgba(255,255,255,0.3)]">₹199</span>
-                </div>
-
-                <a href="https://wa.me/919211391953?text=Hi+Satyam%2C+mujhe+30+Days+Overthinking+Reset+Prompt+purchase+karna+hai." 
-                   class="btn-glow block w-full bg-electric text-black py-6 rounded-full font-black text-2xl flex justify-center items-center gap-4 mb-6">
-                    <i class="fa-brands fa-whatsapp text-4xl"></i>
-                    Buy Now on WhatsApp
-                </a>
-                <p class="text-gray-400 font-semibold text-lg"><i class="fa-solid fa-shield-check text-electric"></i> 100% Secure & Instant Digital Delivery</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="py-24 bg-[#020202]/60 border-t border-white/5">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6" data-aos="fade-up">
-            <h2 class="text-4xl md:text-5xl font-black mb-14 text-center tracking-tight">Frequently Asked Questions</h2>
-            
-            <div class="space-y-5">
-                <details class="glass-card rounded-2xl group transition-all duration-300">
-                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-xl">
-                        <span>How will I receive the product?</span>
-                        <span class="transition-transform duration-300 group-open:rotate-180"><i class="fa-solid fa-chevron-down text-electric"></i></span>
-                    </summary>
-                    <div class="text-gray-400 p-6 pt-0 text-lg leading-relaxed border-t border-white/5 mt-2">
-                        Payment complete hone ke baad aapko WhatsApp par instant digital access (PDF/Notion link) mil jayega.
-                    </div>
-                </details>
-                
-                <details class="glass-card rounded-2xl group transition-all duration-300">
-                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-xl">
-                        <span>Is this beginner friendly?</span>
-                        <span class="transition-transform duration-300 group-open:rotate-180"><i class="fa-solid fa-chevron-down text-electric"></i></span>
-                    </summary>
-                    <div class="text-gray-400 p-6 pt-0 text-lg leading-relaxed border-t border-white/5 mt-2">
-                        Bilkul! Agar aapne pehle kabhi journaling ya meditation nahi kiya hai, tab bhi isme step-by-step simple instructions hain.
-                    </div>
-                </details>
-
-                <details class="glass-card rounded-2xl group transition-all duration-300">
-                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-xl">
-                        <span>Can I use it on my phone?</span>
-                        <span class="transition-transform duration-300 group-open:rotate-180"><i class="fa-solid fa-chevron-down text-electric"></i></span>
-                    </summary>
-                    <div class="text-gray-400 p-6 pt-0 text-lg leading-relaxed border-t border-white/5 mt-2">
-                        Yes, ye system mobile, tablet aur laptop sab par perfectly work karta hai. Aap printable tracker ko print bhi karwa sakte hain.
-                    </div>
-                </details>
-
-                <details class="glass-card rounded-2xl group transition-all duration-300">
-                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-xl">
-                        <span>Do I get lifetime access?</span>
-                        <span class="transition-transform duration-300 group-open:rotate-180"><i class="fa-solid fa-chevron-down text-electric"></i></span>
-                    </summary>
-                    <div class="text-gray-400 p-6 pt-0 text-lg leading-relaxed border-t border-white/5 mt-2">
-                        Yes! Ek baar purchase karne ke baad aapke paas iska lifetime access rahega.
-                    </div>
-                </details>
-
-                <details class="glass-card rounded-2xl group transition-all duration-300">
-                    <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-xl">
-                        <span>Is it therapy?</span>
-                        <span class="transition-transform duration-300 group-open:rotate-180"><i class="fa-solid fa-chevron-down text-electric"></i></span>
-                    </summary>
-                    <div class="text-gray-400 p-6 pt-0 text-lg leading-relaxed border-t border-white/5 mt-2">
-                        No, this is NOT therapy or medical advice. Ye ek self-improvement aur habit-building tool hai. Agar aap severe mental health issues face kar rahe hain, toh please ek professional therapist se consult karein.
-                    </div>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <!-- Disclaimer -->
-    <section class="py-14 border-t border-white/10 bg-[#020202] text-center">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            <h3 class="text-xs font-black text-gray-600 uppercase tracking-[0.25em] mb-5">Disclaimer</h3>
-            <p class="text-xs text-gray-500 leading-loose max-w-3xl mx-auto font-medium">
-                This product is designed for educational and self-improvement purposes. It supports healthy habits such as journaling, meditation, breathing exercises, reflection and routine building. It is not medical advice, psychotherapy or a replacement for professional mental health treatment. If someone has severe or persistent mental health symptoms, they should consult a qualified mental health professional.
-            </p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-[#020202] py-12 border-t border-white/5 relative z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="text-center md:text-left">
-                <a href="#" class="text-3xl font-black tracking-tighter mb-2 block hover:text-electric transition-colors drop-shadow-sm">SatyamPatel.in</a>
-                <p class="text-gray-500 text-sm font-semibold">Made with ❤️ by Satyam Patel</p>
-            </div>
-            
-            <div class="flex flex-col sm:flex-row gap-8 items-center">
-                <a href="https://wa.me/919211391953" class="text-gray-400 hover:text-electric transition flex items-center gap-3 font-semibold text-lg">
-                    <i class="fa-brands fa-whatsapp text-2xl"></i> 9211391953
-                </a>
-                <a href="mailto:satyamloveai@gmail.com" class="text-gray-400 hover:text-electric transition flex items-center gap-3 font-semibold text-lg">
-                    <i class="fa-solid fa-envelope text-2xl"></i> satyamloveai@gmail.com
-                </a>
-            </div>
-
-            <div class="flex flex-wrap justify-center gap-6 text-sm font-bold text-gray-600 uppercase tracking-wide">
-                <a href="#" class="hover:text-white transition">Privacy Policy</a>
-                <a href="#" class="hover:text-white transition">Refund Policy</a>
-                <a href="#" class="hover:text-white transition">Terms</a>
-                <a href="#" class="hover:text-white transition">Contact</a>
-            </div>
+        <div class="text-center text-sm">
+            © <span id="year"></span> SatyamPatel.in. All rights reserved.
         </div>
     </footer>
-
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/919211391953?text=Hi+Satyam%2C+mujhe+30+Days+Overthinking+Reset+Prompt+purchase+karna+hai." 
-       class="fixed bottom-8 right-8 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center text-4xl shadow-[0_0_30px_rgba(37,211,102,0.5)] hover:scale-110 hover:shadow-[0_0_40px_rgba(37,211,102,0.8)] transition-all duration-300 z-50 animate-bounce border-2 border-white/20">
-        <i class="fa-brands fa-whatsapp"></i>
+    
+    <!-- FLOATING WHATSAPP CTA -->
+    <a href="https://wa.me/918303338664?text=Hi,%20I%20have%20a%20question%20about%20your%20services." target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform z-50 flex items-center justify-center">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.614-.087-.112-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.564-10.563 5.826 0 10.564 4.739 10.564 10.563 0 5.823-4.738 10.563-10.564 10.563z"/></svg>
     </a>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- JAVASCRIPT FOR LOGIC & ANIMATIONS -->
     <script>
-        // Initialize Premium Animations
-        AOS.init({
-            once: true,
-            offset: 50,
-            duration: 900,
-            easing: 'ease-out-cubic',
-        });
+        // Set dynamic year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Navbar Glass Effect on Scroll (Apple style)
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 20) {
-                nav.classList.add('shadow-2xl', 'border-white/10');
-                nav.classList.remove('border-transparent');
-            } else {
-                nav.classList.remove('shadow-2xl', 'border-white/10');
-                nav.classList.add('border-transparent');
-            }
+        // 1. Assessment Logic
+        function runAssessment() {
+            const step1 = document.getElementById('assessment-step-1');
+            const loading = document.getElementById('assessment-loading');
+            const result = document.getElementById('assessment-result');
+
+            // Hide Step 1, Show Loading
+            step1.style.display = 'none';
+            loading.style.display = 'flex';
+            loading.classList.remove('hidden');
+
+            // Simulate AI Processing Time (2.5 seconds)
+            setTimeout(() => {
+                loading.style.display = 'none';
+                result.style.display = 'block';
+                result.classList.remove('hidden');
+            }, 2500);
+        }
+
+        // 2. Scroll Animation Observer
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15 // Triggers when 15% of element is visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Animate only once
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all elements with class 'fade-up'
+            document.querySelectorAll('.fade-up').forEach(el => {
+                observer.observe(el);
+            });
         });
     </script>
 </body>
