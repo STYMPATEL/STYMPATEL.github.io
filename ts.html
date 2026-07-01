@@ -3,114 +3,312 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms and Conditions | Syni AI</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Morning Routine Demo | Premium Experience</title>
+    <meta name="description" content="Experience a personalized morning routine designed to bring calmness and focus.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-[#050505] text-gray-300 font-sans antialiased selection:bg-blue-500 selection:text-white">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        dark: "#0f172a"
+                    }
+                }
+            }
+        }
+    </script>
 
-    <nav class="max-w-4xl mx-auto px-6 py-6 border-b border-gray-900 mb-10">
-        <a href="index.html" class="text-2xl font-bold tracking-tighter text-white hover:text-gray-300 transition">
-            Syni<span class="text-blue-500">.in</span>
-        </a>
+    <!-- Custom CSS for Advanced Effects -->
+    <style>
+        body {
+            background-color: #f8fafc;
+            color: #0f172a;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Animated Glowing Blobs in Background */
+        .blob {
+            position: absolute;
+            filter: blur(90px);
+            z-index: -1;
+            opacity: 0.5;
+            animation: floatBlob 10s infinite alternate ease-in-out;
+            border-radius: 50%;
+        }
+        .blob-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: #c084fc; } /* Purple */
+        .blob-2 { top: 40%; right: -10%; width: 40vw; height: 40vw; background: #60a5fa; } /* Blue */
+        .blob-3 { bottom: -10%; left: 20%; width: 45vw; height: 45vw; background: #34d399; } /* Green */
+
+        @keyframes floatBlob {
+            0% { transform: translateY(0) scale(1); }
+            100% { transform: translateY(-50px) scale(1.1); }
+        }
+
+        /* Glassmorphism Navigation */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        /* Scroll Reveal Animation */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Lightbox Transitions */
+        #lightbox {
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+        #lightbox.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        #lightbox-img {
+            transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        #lightbox.open #lightbox-img {
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-purple-200 selection:text-purple-900">
+
+    <!-- Background Glowing Orbs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <!-- HEADER / NAVIGATION -->
+    <nav class="fixed top-0 w-full z-40 glass-nav py-4 px-6 shadow-sm">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="inline-flex items-center gap-2 text-slate-700 hover:text-slate-900 font-bold transition-all bg-white/80 px-5 py-2.5 rounded-full shadow hover:shadow-md border border-white">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Back
+            </a>
+            <a href="https://wa.me/918303338664" target="_blank" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#25D366] text-white font-bold text-sm shadow-[0_0_15px_rgba(37,211,102,0.4)] hover:shadow-[0_0_25px_rgba(37,211,102,0.6)] hover:bg-[#20b858] transition-all hover:-translate-y-0.5">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.614-.087-.112-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
+                <span class="hidden sm:inline">Connect on WhatsApp</span>
+            </a>
+        </div>
     </nav>
 
-    <header class="max-w-4xl mx-auto px-6 mb-12">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">Terms and Conditions</h1>
-        <p class="text-gray-500">Last Updated: June 15, 2026</p>
-    </header>
-
-    <main class="max-w-4xl mx-auto px-6 pb-24 space-y-10 text-lg leading-relaxed">
-
-        <section>
-            <h2 class="text-2xl font-bold text-white mb-4">1. Acceptance of Terms</h2>
-            <p>
-                By accessing or subscribing to Syni AI ("Syni.in", "we", "our", or "us"), you agree to be bound by these Terms and Conditions. Our service provides an expert-backed, personalized AI mental wellness companion tailored to your unique challenges, routines, and habits.
-            </p>
-        </section>
-
-        <section>
-            <h2 class="text-2xl font-bold text-white mb-4">2. Description of Service & Hybrid Workflow</h2>
-            <p class="mb-4">
-                Syni AI operates on a multi-step human-to-AI personalization pipeline based on your subscription tier:
-            </p>
-            <ul class="list-disc pl-6 space-y-3">
-                <li><strong>Onboarding & Consultation:</strong> Upon subscription, we review your challenges, symptoms, and daily struggles. For premium tiers, this data is sent directly to our partnered psychologists.</li>
-                <li><strong>Clinical Strategy:</strong> The partnered psychologists evaluate your case to design a customized therapy, meditation, and daily routine blueprint for full behavioral recovery.</li>
-                <li><strong>Prompt Engineering Deployment:</strong> The psychologist's report is transferred to our Prompt Engineers, who translate the clinical strategy into a complex, multi-layered system prompt. This prompt is then securely set up inside your personal AI coach.</li>
-                <li><strong>Updates & Adjustments:</strong> Depending on your plan, these core prompts and daily routines are dynamically adjusted (every 5 days for Deep Focus, and every 24 hours with daily report reviews for Bespoke Architect).</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2 class="text-2xl font-bold text-white mb-4">3. Mental Wellness Companion (Medical Disclaimer)</h2>
-            <div class="bg-blue-900/10 border-l-4 border-blue-500 p-6 rounded-r-lg">
-                <p class="text-gray-300">
-                    <strong>Syni AI is a mental wellness companion and coach. The AI tool itself does not provide clinical medical treatment or emergency psychiatric services.</strong> While our onboarding workflows and core prompt frameworks are designed alongside partnered mental health professionals (psychologists), the final interactive application is an automated AI interface. 
-                </p>
-                <p class="text-gray-300 mt-3">
-                    Syni AI should not be treated as a replacement for live emergency medical intervention. If you are experiencing a severe psychological crisis, clinical depression, or thoughts of self-harm, you must immediately disconnect from this platform and contact your local medical emergency services or a licensed crisis helpline.
-                </p>
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow pt-36 pb-24 px-6 max-w-7xl mx-auto w-full relative z-10">
+        
+        <!-- Header Section -->
+        <div class="text-center mb-16 fade-up">
+            <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/60 backdrop-blur-sm border border-purple-200 shadow-md mb-6 hover:shadow-lg transition-shadow">
+                <span class="text-sm font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600 uppercase tracking-widest">Premium Preview</span>
             </div>
-        </section>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 drop-shadow-sm">
+                Inside Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-500">Morning Routine</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-700 max-w-2xl mx-auto leading-relaxed font-medium">
+                Experience exactly how your personalized daily prompts arrive on WhatsApp to guide you toward a calmer, more focused day.
+            </p>
+        </div>
 
-        <section>
-            <h2 class="text-2xl font-bold text-white mb-4">4. Payment and Strict No-Refund Policy</h2>
-            <div class="bg-red-900/10 border-l-4 border-red-500 p-6 rounded-r-lg">
-                <p class="mb-4 font-bold text-white text-xl">
-                    ⚠️ Strict Policy: All sales are final. We cannot offer refunds under any circumstances.
-                </p>
-                <p class="mb-3">
-                    We offer a <strong>24-Hour Free Trial</strong> across all our tiers. This allows every user to completely test, interact with, and evaluate the platform's value before any money changes hands. 
-                </p>
-                <p class="mb-3">
-                    Once a subscription payment is captured, a complex operational sequence is triggered immediately:
-                </p>
-                <ul class="list-disc pl-6 space-y-2 mb-4">
-                    <li>Financial resources are instantly allocated to compensate our partnered psychologists for their professional analysis and routine design.</li>
-                    <li>Manual labor charges are incurred for the customized system prompt engineering and backend architectural setup.</li>
-                    <li>High-performance cloud server hosting and dedicated LLM token API processing costs are locked in for your account.</li>
-                </ul>
-                <p>
-                    Because these operational, medical review, and computational costs are spent immediately to create your custom AI model, we maintain a zero-refund policy. You can cancel your subscription at any time to halt future billing cycles, but historical payments will not be returned.
-                </p>
+        <!-- Interactive Grid (No external links) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+            
+            <!-- Generate Cards dynamically for cleaner HTML via JS below, or write them out. Writing them out for immediate render: -->
+
+            <!-- Card 1 -->
+            <div class="fade-up relative rounded-[2rem] overflow-hidden shadow-xl hover:shadow-[0_20px_50px_rgba(168,85,247,0.3)] hover:-translate-y-2 transition-all duration-500 border-[6px] border-white/80 bg-white group cursor-pointer" onclick="openLightbox('https://i.ibb.co/C3SDWMcN/1st.jpg')" style="transition-delay: 100ms;">
+                <div class="overflow-hidden bg-slate-100 aspect-[3/4]">
+                    <img src="https://i.ibb.co/C3SDWMcN/1st.jpg" alt="Step 1" class="w-full h-full object-cover group-hover:scale-110 group-hover:rotate-1 transition-transform duration-700">
+                </div>
+                <!-- Hover Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                    <span class="text-white/90 font-medium flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg> 
+                        Click to enlarge
+                    </span>
+                </div>
+                <!-- Badge -->
+                <div class="absolute top-5 left-5 bg-slate-900/90 backdrop-blur-md text-white px-5 py-2 rounded-full text-sm font-bold shadow-[0_4px_15px_rgba(0,0,0,0.2)] flex items-center gap-2 border border-slate-700/50">
+                    <span class="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse shadow-[0_0_10px_#4ade80]"></span> Step 1
+                </div>
             </div>
-        </section>
 
-        <section>
-            <h2 class="text-2xl font-bold text-white mb-4">5. Data Governance & Privacy Security</h2>
-            <p class="mb-4">
-                Because you share highly sensitive thoughts, symptoms, and life details with Syni, we enforce strict data safety protocols:
-            </p>
-            <ul class="list-disc pl-6 space-y-2">
-                <li>Your case history and chats are encrypted and securely stored in isolated cloud databases.</li>
-                <li>Your personal data is strictly accessed by our development team and partnered psychologists solely for updating and optimizing your custom AI prompt layers.</li>
-                <li>We do not sell, rent, or distribute your private conversations to marketing networks or third-party data brokers. Your conversations are completely blocked from training public open-source AI models.</li>
-            </ul>
-        </section>
+            <!-- Card 2 -->
+            <div class="fade-up relative rounded-[2rem] overflow-hidden shadow-xl hover:shadow-[0_20px_50px_rgba(59,130,246,0.3)] hover:-translate-y-2 transition-all duration-500 border-[6px] border-white/80 bg-white group cursor-pointer" onclick="openLightbox('https://i.ibb.co/FqDWjDSQ/2nd.jpg')" style="transition-delay: 200ms;">
+                <div class="overflow-hidden bg-slate-100 aspect-[3/4]">
+                    <img src="https://i.ibb.co/FqDWjDSQ/2nd.jpg" alt="Step 2" class="w-full h-full object-cover group-hover:scale-110 group-hover:rotate-1 transition-transform duration-700">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                    <span class="text-white/90 font-medium flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg> Click to enlarge</span>
+                </div>
+                <div class="absolute top-5 left-5 bg-slate-900/90 backdrop-blur-md text-white px-5 py-2 rounded-full text-sm font-bold shadow-[0_4px_15px_rgba(0,0,0,0.2)] flex items-center gap-2 border border-slate-700/50">
+                    <span class="w-2.5 h-2.5 rounded-full bg-blue-400 shadow-[0_0_10px_#60a5fa]"></span> Step 2
+                </div>
+            </div>
 
-        <section>
-            <h2 class="text-2xl font-bold text-white mb-4">6. Limitation of Liability</h2>
-            <p>
-                To the maximum extent permitted by applicable laws, Syni AI, its core team, and its creator (Satyam) shall not be held liable for any mental, physical, emotional, or financial outcomes resulting from the usage or misinterpretation of the AI's conversations, micro-tasks, exercises, or routine schedules. The user assumes full responsibility for their personal wellness journey.
-            </p>
-        </section>
+            <!-- Card 3 -->
+            <div class="fade-up relative rounded-[2rem] overflow-hidden shadow-xl hover:shadow-[0_20px_50px_rgba(168,85,247,0.3)] hover:-translate-y-2 transition-all duration-500 border-[6px] border-white/80 bg-white group cursor-pointer" onclick="openLightbox('https://i.ibb.co/LX8ghgVk/3rd.jpg')" style="transition-delay: 300ms;">
+                <div class="overflow-hidden bg-slate-100 aspect-[3/4]">
+                    <img src="https://i.ibb.co/LX8ghgVk/3rd.jpg" alt="Step 3" class="w-full h-full object-cover group-hover:scale-110 group-hover:rotate-1 transition-transform duration-700">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                    <span class="text-white/90 font-medium flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg> Click to enlarge</span>
+                </div>
+                <div class="absolute top-5 left-5 bg-slate-900/90 backdrop-blur-md text-white px-5 py-2 rounded-full text-sm font-bold shadow-[0_4px_15px_rgba(0,0,0,0.2)] flex items-center gap-2 border border-slate-700/50">
+                    <span class="w-2.5 h-2.5 rounded-full bg-purple-400 shadow-[0_0_10px_#c084fc]"></span> Step 3
+                </div>
+            </div>
 
-        <section>
-            <h2 class="text-2xl font-bold text-white mb-4">7. Support and Contact Channels</h2>
-            <p>
-                For subscription cancellations, data deletion requests, or questions regarding these terms, contact us directly:
-            </p>
-            <ul class="mt-4 space-y-2">
-                <li><strong>Email:</strong> <a href="mailto:Satyamloveai@gmail.com" class="text-blue-400 hover:underline">Satyamloveai@gmail.com</a></li>
-                <li><strong>WhatsApp Support:</strong> <a href="https://wa.me/919211391953" target="_blank" class="text-blue-400 hover:underline">+91 92113 91953</a></li>
-            </ul>
-        </section>
+            <!-- Card 4 -->
+            <div class="fade-up relative rounded-[2rem] overflow-hidden shadow-xl hover:shadow-[0_20px_50px_rgba(251,146,60,0.3)] hover:-translate-y-2 transition-all duration-500 border-[6px] border-white/80 bg-white group cursor-pointer" onclick="openLightbox('https://i.ibb.co/JjV7Q1wh/4th.jpg')" style="transition-delay: 100ms;">
+                <div class="overflow-hidden bg-slate-100 aspect-[3/4]">
+                    <img src="https://i.ibb.co/JjV7Q1wh/4th.jpg" alt="Step 4" class="w-full h-full object-cover group-hover:scale-110 group-hover:rotate-1 transition-transform duration-700">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                    <span class="text-white/90 font-medium flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg> Click to enlarge</span>
+                </div>
+                <div class="absolute top-5 left-5 bg-slate-900/90 backdrop-blur-md text-white px-5 py-2 rounded-full text-sm font-bold shadow-[0_4px_15px_rgba(0,0,0,0.2)] flex items-center gap-2 border border-slate-700/50">
+                    <span class="w-2.5 h-2.5 rounded-full bg-orange-400 shadow-[0_0_10px_#fb923c]"></span> Step 4
+                </div>
+            </div>
 
+            <!-- Card 5 -->
+            <div class="fade-up relative rounded-[2rem] overflow-hidden shadow-xl hover:shadow-[0_20px_50px_rgba(244,114,182,0.3)] hover:-translate-y-2 transition-all duration-500 border-[6px] border-white/80 bg-white group cursor-pointer" onclick="openLightbox('https://i.ibb.co/tMkKc7Rr/5th.jpg')" style="transition-delay: 200ms;">
+                <div class="overflow-hidden bg-slate-100 aspect-[3/4]">
+                    <img src="https://i.ibb.co/tMkKc7Rr/5th.jpg" alt="Step 5" class="w-full h-full object-cover group-hover:scale-110 group-hover:rotate-1 transition-transform duration-700">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                    <span class="text-white/90 font-medium flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg> Click to enlarge</span>
+                </div>
+                <div class="absolute top-5 left-5 bg-slate-900/90 backdrop-blur-md text-white px-5 py-2 rounded-full text-sm font-bold shadow-[0_4px_15px_rgba(0,0,0,0.2)] flex items-center gap-2 border border-slate-700/50">
+                    <span class="w-2.5 h-2.5 rounded-full bg-pink-400 shadow-[0_0_10px_#f472b6]"></span> Step 5
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="fade-up relative rounded-[2rem] overflow-hidden shadow-xl hover:shadow-[0_20px_50px_rgba(45,212,191,0.3)] hover:-translate-y-2 transition-all duration-500 border-[6px] border-white/80 bg-white group cursor-pointer" onclick="openLightbox('https://i.ibb.co/JRZCNRkD/6th.jpg')" style="transition-delay: 300ms;">
+                <div class="overflow-hidden bg-slate-100 aspect-[3/4]">
+                    <img src="https://i.ibb.co/JRZCNRkD/6th.jpg" alt="Step 6" class="w-full h-full object-cover group-hover:scale-110 group-hover:rotate-1 transition-transform duration-700">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                    <span class="text-white/90 font-medium flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg> Click to enlarge</span>
+                </div>
+                <div class="absolute top-5 left-5 bg-slate-900/90 backdrop-blur-md text-white px-5 py-2 rounded-full text-sm font-bold shadow-[0_4px_15px_rgba(0,0,0,0.2)] flex items-center gap-2 border border-slate-700/50">
+                    <span class="w-2.5 h-2.5 rounded-full bg-teal-400 shadow-[0_0_10px_#2dd4bf]"></span> Step 6
+                </div>
+            </div>
+
+        </div>
+        
+        <!-- Bottom CTA -->
+        <div class="mt-24 text-center fade-up">
+            <h3 class="text-3xl font-extrabold text-slate-900 mb-6 drop-shadow-sm">Ready to transform your mornings?</h3>
+            <p class="text-slate-600 mb-8 font-medium">Join the journey to better mental wellness today.</p>
+            <a href="https://wa.me/918303338664?text=Hi,%20I%20loved%20the%20demo%20and%20want%20to%20start%20my%20routine!" target="_blank" class="inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white font-bold text-lg shadow-[0_10px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_30px_rgba(0,0,0,0.3)] hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto relative overflow-hidden group">
+                <span class="relative z-10 flex items-center gap-3">
+                    Get Your First Prompt Free
+                    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </span>
+                <!-- Button shine effect -->
+                <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:animate-[shimmer_1.5s_infinite]"></div>
+            </a>
+        </div>
     </main>
 
-    <footer class="border-t border-gray-900 py-10 text-center text-gray-600 text-sm bg-[#050505]">
-        <p>&copy; 2026 Syni. All rights reserved.</p>
+    <!-- IN-BUILT LIGHTBOX MODAL (Image Zoom without changing page) -->
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-slate-900/95 backdrop-blur-lg opacity-0 invisible flex justify-center items-center p-4 cursor-zoom-out" onclick="closeLightbox()">
+        <!-- Close Button -->
+        <button class="absolute top-6 right-6 md:top-10 md:right-10 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition-colors focus:outline-none" onclick="closeLightbox()">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <!-- Image Container -->
+        <div class="relative max-w-4xl max-h-[90vh] w-full flex justify-center">
+            <img id="lightbox-img" src="" alt="Expanded View" class="max-w-full max-h-[90vh] object-contain rounded-2xl shadow-2xl scale-95 border border-white/10" onclick="event.stopPropagation()">
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-white/60 backdrop-blur-md border-t border-white py-8 px-6 mt-auto relative z-10 shadow-[0_-4px_20px_rgba(0,0,0,0.02)]">
+        <div class="max-w-7xl mx-auto text-center font-medium text-slate-500 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                © <span id="year"></span> SatyamPatel.in. All rights reserved.
+            </div>
+            <div class="flex gap-6">
+                <a href="index.html#privacy" class="hover:text-purple-600 transition-colors">Privacy</a>
+                <a href="index.html#terms" class="hover:text-purple-600 transition-colors">Terms</a>
+            </div>
+        </div>
     </footer>
 
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Set dynamic year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // 1. SCROLL ANIMATION
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        obs.unobserve(entry.target); 
+                    }
+                });
+            }, { root: null, rootMargin: '0px', threshold: 0.1 });
+
+            document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+        });
+
+        // 2. LIGHTBOX LOGIC
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(imageSrc) {
+            lightboxImg.src = imageSrc;
+            lightbox.classList.add('open');
+            document.body.style.overflow = 'hidden'; // Prevents scrolling behind the modal
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('open');
+            document.body.style.overflow = 'auto'; // Restores scrolling
+            // Small delay before clearing src to allow fade out animation
+            setTimeout(() => { lightboxImg.src = ""; }, 400);
+        }
+
+        // Close lightbox on Escape key press
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape" && lightbox.classList.contains('open')) {
+                closeLightbox();
+            }
+        });
+    </script>
+    
+    <!-- CSS Keyframes injected here for button shimmer -->
+    <style>
+        @keyframes shimmer {
+            100% { transform: translateX(100%); }
+        }
+    </style>
 </body>
 </html>
