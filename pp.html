@@ -1,110 +1,465 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy | SYNI.ME</title>
     
+    <!-- SEO Meta Tags -->
+    <title>SatyamPatel.in | Personalized Daily Prompts for Mental Wellness</title>
+    <meta name="description" content="Take back control of your mind with personalized daily prompts designed around your goals, routines, and habits to support your mental wellness journey.">
+    <link rel="canonical" href="https://satyampatel.in/" />
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
-
-    <style>
-        /* Legal Page Specific Styling */
-        .legal-section { padding: 120px 0 60px; color: #ccc; }
-        .legal-content { background: rgba(255, 255, 255, 0.03); padding: 40px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.1); }
-        .legal-content h1 { font-size: 40px; color: #fff; margin-bottom: 10px; font-family: 'Orbitron', sans-serif; }
-        .legal-content h2 { color: var(--accent); font-size: 24px; margin-top: 30px; margin-bottom: 15px; font-family: 'Orbitron', sans-serif; }
-        .legal-content p { margin-bottom: 15px; font-size: 16px; line-height: 1.8; font-family: 'Rajdhani', sans-serif; font-weight: 500; }
-        .legal-content ul { margin-left: 20px; margin-bottom: 20px; }
-        .legal-content li { margin-bottom: 10px; list-style: disc; }
-        .highlight-box { 
-            background: rgba(255, 0, 0, 0.1); 
-            border: 1px solid #ff4d4d; 
-            padding: 20px; 
-            border-radius: 10px; 
-            margin: 20px 0;
-            color: #fff;
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (via CDN for styling) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            blue: "#EBF3FA",
+                            purple: "#9F7AEA",
+                            green: "#C6F6D5",
+                            dark: "#1A202C"
+                        }
+                    },
+                    boxShadow: {
+                        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
+                    }
+                }
+            }
         }
+    </script>
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://satyampatel.in/#organization",
+          "name": "SatyamPatel.in",
+          "url": "https://satyampatel.in",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91-8303338664",
+            "contactType": "Customer Support",
+            "email": "Satyamloveai@gmail.com",
+            "areaServed": "IN"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Custom CSS for Animations & Glassmorphism -->
+    <style>
+        body {
+            background: linear-gradient(135deg, #f3f4f6 0%, #e0e7ff 50%, #f3e8ff 100%);
+            color: #0f172a;
+        }
+
+        /* Glassmorphism Classes */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .glass-dark {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Scroll Animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Loading Spinner */
+        .spinner {
+            border: 4px solid rgba(168, 85, 247, 0.3);
+            border-top: 4px solid #a855f7;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
 </head>
-<body>
+<body class="antialiased selection:bg-purple-200 selection:text-purple-900">
 
-    <header class="header">
-        <div class="container header-flex">
-            <div class="logo">
-                <a href="index.html">SYNI<span class="highlight">.ME</span></a>
+    <!-- HERO SECTION -->
+    <section class="relative pt-32 pb-20 px-6 lg:px-8 max-w-7xl mx-auto flex flex-col items-center text-center">
+        <div class="fade-up inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card shadow-sm mb-8">
+            <span class="flex h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
+            <span class="text-sm font-medium text-slate-700">🎁 Only For First 10 Users</span>
+        </div>
+        
+        <h1 class="fade-up text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 mb-6" style="transition-delay: 100ms;">
+            Take Back Control <br class="hidden md:block"/> 
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
+                Of Your Mind.
+            </span>
+        </h1>
+        
+        <p class="fade-up max-w-2xl text-lg md:text-xl text-slate-600 mb-10 leading-relaxed" style="transition-delay: 200ms;">
+            Personalized daily prompts designed around your goals, routines, habits, and daily challenges to support your mental wellness journey alongside professional care.
+        </p>
+        
+        <div class="fade-up flex flex-col sm:flex-row gap-4 w-full justify-center" style="transition-delay: 300ms;">
+            <a href="https://wa.me/918303338664?text=Hi,%20I%20want%20my%20FREE%20Day%201%20Experience!" target="_blank" class="px-8 py-4 rounded-full bg-slate-900 text-white font-semibold text-lg shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 flex items-center justify-center">
+                Get Your FREE Day 1 Experience
+            </a>
+            <button class="px-8 py-4 rounded-full glass-card font-semibold text-lg hover:bg-white/80 transition-all flex items-center justify-center gap-2">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                Watch 2 Min Demo
+            </button>
+        </div>
+    </section>
+
+    <!-- TRUST SECTION -->
+    <section class="py-10 border-y border-white/20 bg-white/10 backdrop-blur-sm fade-up">
+        <div class="max-w-7xl mx-auto px-6 flex flex-wrap justify-center gap-8 md:gap-16 opacity-70">
+            <div class="flex items-center gap-2 text-slate-700 font-medium">🛡️ Privacy Protected</div>
+            <div class="flex items-center gap-2 text-slate-700 font-medium">🧠 Personalized Prompts</div>
+            <div class="flex items-center gap-2 text-slate-700 font-medium">⚕️ Supports Professional Care</div>
+            <div class="flex items-center gap-2 text-slate-700 font-medium">🎯 Goal-Based Guidance</div>
+        </div>
+    </section>
+
+    <!-- PAIN POINTS SECTION -->
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16 fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Does This Sound Like You?</h2>
+            <p class="text-slate-600">The first step to feeling better is recognizing where you are.</p>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <!-- Items injected via JS for cleaner HTML -->
+            <script>
+                const pains = ["Overthinking", "Anxiety", "Negative Thoughts", "Brain Fog", "Low Motivation", "Poor Routine", "Phone Addiction", "Procrastination"];
+                pains.forEach((pain, index) => {
+                    document.write(`<div class="fade-up glass-card p-4 rounded-2xl shadow-glass text-center font-medium text-slate-800 hover:scale-105 transition-transform" style="transition-delay: ${index * 50}ms">${pain}</div>`);
+                });
+            </script>
+        </div>
+        
+        <div class="mt-16 text-center text-xl font-medium text-slate-700 italic fade-up">
+            "If this feels familiar, you're not alone—and you're in the right place."
+        </div>
+    </section>
+
+    <!-- REAL EXPERIENCE / SCREENSHOT SECTION -->
+    <section class="py-16 px-6 max-w-7xl mx-auto fade-up">
+        <div class="glass-card rounded-3xl p-8 md:p-12 shadow-xl border border-white/50 flex flex-col md:flex-row items-center gap-12">
+            <div class="flex-1 text-center md:text-left">
+                <span class="inline-block py-1 px-3 rounded-full bg-purple-100 text-purple-700 font-semibold text-sm mb-4">A Look Inside</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Wake Up To Positivity, Not Stress.</h2>
+                <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                    Imagine opening your phone first thing in the morning. Instead of stressful news or overwhelming social media, you receive a warm, personalized check-in right on WhatsApp. 
+                </p>
+                <p class="text-lg text-slate-800 leading-relaxed font-medium mb-6">
+                    ✨ It's a small nudge, but starting your day with a simple "Good Morning" and a clear purpose can change your entire mindset.
+                </p>
+                <div class="inline-flex items-center gap-3 text-green-600 font-bold bg-green-50 px-4 py-2 rounded-lg">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.614-.087-.112-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.564-10.563 5.826 0 10.564 4.739 10.564 10.563 0 5.823-4.738 10.563-10.564 10.563z"/></svg>
+                    Delivered straight to your WhatsApp
+                </div>
             </div>
-            <div class="header-btn">
-                <a href="index.html" class="btn btn-secondary">Back to Home</a>
+            <div class="flex-1 relative w-full flex justify-center">
+                <!-- Decorative background elements -->
+                <div class="absolute inset-0 bg-gradient-to-r from-green-400 to-blue-400 rounded-3xl blur-2xl opacity-20 transform -rotate-3 scale-105"></div>
+                <!-- The User's Image -->
+                <img src="https://i.ibb.co/ZQRg8ts/IMG-20260701-091920.jpg" alt="Morning Motivation WhatsApp Message" class="relative z-10 rounded-2xl shadow-2xl max-w-full sm:max-w-xs border-4 border-white transform rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-500">
             </div>
         </div>
-    </header>
+    </section>
 
-    <section class="legal-section">
-        <div class="container">
-            <div class="legal-content">
-                <h1>Privacy Policy</h1>
-                <p>Last Updated: December 2025</p>
+    <!-- INTERACTIVE ASSESSMENT -->
+    <section class="py-20 px-6 bg-slate-900 text-white fade-up">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10">Let's Build Your Routine</h2>
+            
+            <div class="glass-dark p-8 rounded-3xl shadow-2xl relative min-h-[300px] flex flex-col justify-center">
                 
-                <p>At <strong>SYNI.ME</strong>, accessible from https://syni.me, one of our main priorities is the privacy of our visitors and clients. This Privacy Policy document contains types of information that is collected and recorded by SYNI.ME and how we use it.</p>
-
-                <h2>1. Information We Collect</h2>
-                <p>When you register for a Personal AI or Automation service, we may ask for your contact information, including items such as:</p>
-                <ul>
-                    <li>Name</li>
-                    <li>Email Address (synioffice@gmail.com is our official contact)</li>
-                    <li>Business Details</li>
-                    <li>Data required for AI Training (e.g., past blogs, emails, documents)</li>
-                </ul>
-
-                <h2>2. How We Use Your Data</h2>
-                <p>We use the information we collect in various ways, including to:</p>
-                <ul>
-                    <li>Build and train your custom Personal AI Agent.</li>
-                    <li>Communicate with you regarding updates and support.</li>
-                    <li>Send you the final deliverables.</li>
-                </ul>
-                <p><strong>Crucial Note:</strong> We do NOT sell your data to third parties. The data used to train your AI model remains your intellectual property.</p>
-
-                <h2>3. Refund Policy (Strict)</h2>
-                <div class="highlight-box">
-                    <p><strong>NO REFUNDS:</strong> Due to the nature of digital services and the immediate costs incurred in server setup and AI model training, <strong>SYNI.ME does not offer refunds</strong> once a payment has been made and the project has started.</p>
-                    <p>By engaging our services, you acknowledge and agree to this policy without exception.</p>
+                <!-- Step 1: Form -->
+                <div id="assessment-step-1" class="space-y-8 text-left w-full transition-opacity duration-500">
+                    <div>
+                        <label class="block mb-2 font-medium">How is your stress level today?</label>
+                        <input type="range" class="w-full accent-purple-500">
+                    </div>
+                    <div>
+                        <label class="block mb-2 font-medium">How many hours did you sleep?</label>
+                        <input type="range" min="0" max="12" class="w-full accent-purple-500">
+                    </div>
+                    <button onclick="runAssessment()" class="w-full py-4 rounded-xl bg-gradient-to-r from-purple-500 to-blue-500 font-bold text-lg hover:opacity-90 transition-opacity">
+                        Analyze My Profile
+                    </button>
                 </div>
 
-                <h2>4. Data Security</h2>
-                <p>We use industry-standard encryption to protect your data during the transfer and training process. However, no method of transmission over the internet is 100% secure.</p>
+                <!-- Step 2: Loading (Hidden by default) -->
+                <div id="assessment-loading" class="hidden flex-col items-center w-full transition-opacity duration-500">
+                    <div class="spinner mb-4"></div>
+                    <p class="text-lg font-medium animate-pulse">Designing your personalized Day 1 plan...</p>
+                </div>
 
-                <h2>5. Third-Party Services</h2>
-                <p>We may use third-party tools (like OpenAI API, Anthropic, or FormSubmit) to power our services. While we choose partners with high security standards, we encourage you to review their respective privacy policies.</p>
-
-                <h2>6. Contact Us</h2>
-                <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us.</p>
-                <p><strong>Email:</strong> <a href="mailto:synioffice@gmail.com" style="color: var(--accent);">synioffice@gmail.com</a></p>
-                <p><strong>Location:</strong> Varanasi, India</p>
+                <!-- Step 3: Result (Hidden by default) -->
+                <div id="assessment-result" class="hidden w-full transition-opacity duration-500">
+                    <div class="inline-flex p-3 bg-green-500/20 text-green-400 rounded-full mb-4 justify-center items-center">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-6">Your Day 1 Plan is Ready</h3>
+                    <div class="bg-black/20 rounded-xl p-6 mb-8 text-left space-y-4">
+                        <p>🎯 <strong>Today's Focus:</strong> Grounding & Small Wins</p>
+                        <p>🧘 <strong>Recommended:</strong> 5-min Box Breathing</p>
+                        <p>⏳ <strong>Estimated Time:</strong> 10 Minutes Total</p>
+                    </div>
+                    <a href="https://wa.me/918303338664?text=Hi,%20I%20just%20completed%20the%20assessment%20and%20want%20my%20Day%201%20Prompt!" target="_blank" class="w-full py-4 rounded-xl bg-[#25D366] text-white font-bold text-lg hover:bg-[#20b858] transition-colors flex items-center justify-center gap-2">
+                        Get My Prompt on WhatsApp
+                    </a>
+                </div>
 
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container footer-content">
-            <div class="footer-logo">
-                <h3>SYNI.ME</h3>
+    <!-- PRICING SECTION -->
+    <section class="py-24 px-6 max-w-7xl mx-auto fade-up">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Invest In Your Mind</h2>
+            <p class="text-slate-600">Choose the level of personalization that fits your goals.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <!-- Basic -->
+            <div class="bg-white rounded-3xl p-8 shadow-xl border border-slate-100 flex flex-col">
+                <h3 class="text-xl font-bold text-slate-800">Basic</h3>
+                <div class="mt-4 mb-8">
+                    <span class="text-4xl font-extrabold">₹1499</span><span class="text-slate-500">/mo</span>
+                </div>
+                <ul class="space-y-4 mb-8 flex-1">
+                    <li class="flex items-center gap-2">✅ Daily personalized prompts</li>
+                    <li class="flex items-center gap-2">✅ WhatsApp delivery</li>
+                </ul>
+                <a href="https://wa.me/918303338664?text=Hi,%20I%20want%20to%20subscribe%20to%20the%20Basic%20Plan%20for%20%E2%82%B91499" target="_blank" class="block text-center w-full py-3 rounded-xl border-2 border-slate-900 font-bold hover:bg-slate-50 transition-colors">Select Basic</a>
             </div>
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="terms.html">Terms</a>
-                <a href="privacy.html">Privacy Policy</a>
+
+            <!-- Pro -->
+            <div class="bg-slate-900 text-white rounded-3xl p-8 shadow-2xl border border-slate-700 flex flex-col relative transform md:-translate-y-4">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-purple-500 to-blue-500 text-white px-4 py-1 rounded-full text-sm font-bold">
+                    Most Popular
+                </div>
+                <h3 class="text-xl font-bold">Pro</h3>
+                <div class="mt-4 mb-8">
+                    <span class="text-4xl font-extrabold">₹2999</span><span class="text-slate-400">/mo</span>
+                </div>
+                <ul class="space-y-4 mb-8 flex-1">
+                    <li class="flex items-center gap-2 text-purple-200">✨ Deeper personalization</li>
+                    <li class="flex items-center gap-2 text-purple-200">✨ Progress-based updates</li>
+                    <li class="flex items-center gap-2 text-purple-200">✨ WhatsApp delivery</li>
+                    <li class="flex items-center gap-2 text-purple-200">✨ Priority support</li>
+                </ul>
+                <a href="https://wa.me/918303338664?text=Hi,%20I%20want%20to%20subscribe%20to%20the%20Pro%20Plan%20for%20%E2%82%B92999" target="_blank" class="block text-center w-full py-3 rounded-xl bg-white text-slate-900 font-bold hover:bg-slate-100 transition-colors">Select Pro</a>
+            </div>
+
+            <!-- Premium -->
+            <div class="bg-white rounded-3xl p-8 shadow-xl border border-slate-100 flex flex-col">
+                <h3 class="text-xl font-bold text-slate-800">Premium</h3>
+                <div class="mt-4 mb-8">
+                    <span class="text-4xl font-extrabold">₹4499</span><span class="text-slate-500">/mo</span>
+                </div>
+                <ul class="space-y-4 mb-8 flex-1">
+                    <li class="flex items-center gap-2">✅ Highest personalization</li>
+                    <li class="flex items-center gap-2">✅ Advanced planning</li>
+                    <li class="flex items-center gap-2">✅ Deep customization</li>
+                    <li class="flex items-center gap-2">✅ Priority support</li>
+                </ul>
+                <a href="https://wa.me/918303338664?text=Hi,%20I%20want%20to%20subscribe%20to%20the%20Premium%20Plan%20for%20%E2%82%B94499" target="_blank" class="block text-center w-full py-3 rounded-xl border-2 border-slate-900 font-bold hover:bg-slate-50 transition-colors">Select Premium</a>
             </div>
         </div>
-        <div class="copyright text-center">
-            <p>&copy; 2025 SYNI.ME | All rights reserved.</p>
+    </section>
+
+    <!-- LEGAL & POLICIES SECTION (ALL IN ONE) -->
+    <section id="legal" class="py-20 px-6 max-w-5xl mx-auto fade-up border-t border-slate-200">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Legal & Policies</h2>
+            <p class="text-slate-500 font-medium">Last Updated: July 1, 2026</p>
+        </div>
+
+        <div class="glass-card rounded-3xl p-8 shadow-lg space-y-12">
+            <!-- Intro -->
+            <div class="text-slate-700 leading-relaxed font-medium pb-6 border-b border-slate-200">
+                Welcome to <span class="font-bold text-slate-900">SatyamPatel.in</span>. By accessing or using this website, you agree to the following Privacy Policy, Terms of Service, and Refund Policy.
+            </div>
+
+            <!-- PRIVACY POLICY -->
+            <div id="privacy">
+                <h3 class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <span class="text-purple-600">🛡️</span> Privacy Policy
+                </h3>
+                <div class="space-y-3 text-slate-600 text-sm md:text-base leading-relaxed">
+                    <p>Your privacy is important to us. We may collect information that you voluntarily provide, including your name, phone number, email address, WhatsApp number, and information you share through assessments, forms, or conversations.</p>
+                    <p class="font-semibold text-slate-800">This information is used only to:</p>
+                    <ul class="list-disc pl-6 space-y-1">
+                        <li>Create personalized daily prompts & deliver our services.</li>
+                        <li>Improve your experience & respond to your questions.</li>
+                        <li>Provide customer support.</li>
+                    </ul>
+                    <p>We do not sell your personal information. Your information may only be shared when required by applicable law, with trusted service providers who help us operate our services, or with your permission. We take reasonable measures to protect your information, but no online platform can guarantee absolute security.</p>
+                </div>
+            </div>
+
+            <!-- TERMS OF SERVICE -->
+            <div id="terms">
+                <h3 class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <span class="text-blue-600">📜</span> Terms of Service
+                </h3>
+                <div class="space-y-3 text-slate-600 text-sm md:text-base leading-relaxed">
+                    <p>SatyamPatel.in provides personalized daily prompts intended to support healthy routines, productivity, emotional well-being, and daily habit building.</p>
+                    <div class="bg-blue-50 border border-blue-100 rounded-lg p-4 text-slate-800 my-4 text-sm">
+                        <strong>Important Disclaimer:</strong> Our service is not medical treatment, therapy, diagnosis, emergency support, or a replacement for a licensed doctor, psychologist, psychiatrist, or other healthcare professional. You should always continue following the advice, treatment, and medications prescribed by your healthcare provider.
+                    </div>
+                    <p class="font-semibold text-slate-800">By using this website, you agree that:</p>
+                    <ul class="list-disc pl-6 space-y-1">
+                        <li>You are responsible for your own decisions and actions.</li>
+                        <li>You will provide accurate information when requested.</li>
+                        <li>You understand that results vary from person to person.</li>
+                    </ul>
+                    <p>SatyamPatel.in does not guarantee any specific outcome or recovery. To the maximum extent permitted by applicable law, SatyamPatel.in and its owner shall not be liable for any indirect, incidental, special, or consequential loss or damage arising from the use of this website. We reserve the right to modify, suspend, or discontinue any part of the service at any time without prior notice.</p>
+                </div>
+            </div>
+
+            <!-- NO REFUND POLICY -->
+            <div id="refund">
+                <h3 class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <span class="text-red-500">💳</span> No Refund Policy
+                </h3>
+                <div class="space-y-3 text-slate-600 text-sm md:text-base leading-relaxed">
+                    <p class="font-bold text-slate-900">All purchases made through SatyamPatel.in are final.</p>
+                    <p>Because every service includes time, effort, and personalized prompt creation specifically for each individual, all payments are non-refundable.</p>
+                    <ul class="list-disc pl-6 space-y-1 text-red-600 font-medium my-3">
+                        <li>No refunds or partial refunds will be issued.</li>
+                        <li>No cancellations will be accepted after work has begun.</li>
+                        <li>No refunds will be provided because of change of mind, personal preferences, or lack of usage.</li>
+                    </ul>
+                    <p>Before purchasing any paid plan, users are encouraged to try the Free Personalized Day 1 Experience to understand how the service works. If you experience a genuine technical issue caused by our platform, we will make reasonable efforts to resolve the issue. This does not guarantee a refund. By purchasing any plan, you confirm that you have agreed to this policy.</p>
+                </div>
+            </div>
+
+            <!-- CONTACT -->
+            <div id="contact" class="pt-6 border-t border-slate-200">
+                <h3 class="text-xl font-bold text-slate-900 mb-4">Contact Information</h3>
+                <div class="grid sm:grid-cols-3 gap-4 text-sm text-slate-700">
+                    <div class="flex items-center gap-2"><span class="text-lg">📞</span> +91-8303338664</div>
+                    <div class="flex items-center gap-2"><span class="text-lg">📧</span> Satyamloveai@gmail.com</div>
+                    <div class="flex items-center gap-2"><span class="text-lg">📍</span> Sector 22, Noida, UP, India</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-400 py-12 px-6 fade-up">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 mb-8 border-b border-slate-800 pb-8">
+            <div class="md:col-span-2">
+                <h4 class="text-2xl font-bold text-white mb-4">SatyamPatel.in</h4>
+                <p class="max-w-sm text-sm leading-relaxed">
+                    Supporting your mental wellness journey through structured, personalized daily prompts. 
+                    <br><br>
+                    <strong>Disclaimer:</strong> We do not provide therapy or replace doctors. Our service is designed to support healthier routines alongside professional care.
+                </p>
+            </div>
+            <div>
+                <h5 class="text-white font-semibold mb-4">Contact</h5>
+                <ul class="space-y-2 text-sm">
+                    <li>📞 +91-8303338664</li>
+                    <li>✉️ Satyamloveai@gmail.com</li>
+                    <li>📍 Sector 22, Noida, UP</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-white font-semibold mb-4">Legal</h5>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#privacy" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                    <li><a href="#terms" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    <li><a href="#refund" class="hover:text-white transition-colors">Refund Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center text-sm">
+            © <span id="year"></span> SatyamPatel.in. All rights reserved.
         </div>
     </footer>
+    
+    <!-- FLOATING WHATSAPP CTA -->
+    <a href="https://wa.me/918303338664?text=Hi,%20I%20have%20a%20question%20about%20your%20services." target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform z-50 flex items-center justify-center">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.614-.087-.112-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-5.824 4.74-10.563 10.564-10.563 5.826 0 10.564 4.739 10.564 10.563 0 5.823-4.738 10.563-10.564 10.563z"/></svg>
+    </a>
 
+    <!-- JAVASCRIPT FOR LOGIC & ANIMATIONS -->
+    <script>
+        // Set dynamic year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // 1. Assessment Logic
+        function runAssessment() {
+            const step1 = document.getElementById('assessment-step-1');
+            const loading = document.getElementById('assessment-loading');
+            const result = document.getElementById('assessment-result');
+
+            // Hide Step 1, Show Loading
+            step1.style.display = 'none';
+            loading.style.display = 'flex';
+            loading.classList.remove('hidden');
+
+            // Simulate AI Processing Time (2.5 seconds)
+            setTimeout(() => {
+                loading.style.display = 'none';
+                result.style.display = 'block';
+                result.classList.remove('hidden');
+            }, 2500);
+        }
+
+        // 2. Scroll Animation Observer
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15 
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-up').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
 </html>
